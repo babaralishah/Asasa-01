@@ -21,6 +21,12 @@ import { ForgetpassverifyComponent } from './forgetpassverify/forgetpassverify.c
 import { NewpassComponent } from './newpass/newpass.component';
 import { LoginComponent } from './login/login.component';
 import { SignupotpComponent } from './signupotp/signupotp.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -46,7 +52,7 @@ import { SignupotpComponent } from './signupotp/signupotp.component';
     FormsModule
     // MaterialModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

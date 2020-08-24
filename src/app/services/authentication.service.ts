@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
   // API_URL: string = 'http://localhost:4000';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  private readonly url = environment.url;
+  private readonly url = 'https://shaisecommercestore.herokuapp.com/api'; // environment.url;
 
 
 

@@ -1,16 +1,16 @@
 
 import { RegisterResponse } from './RegisterResponse';
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from "../authentication.service";
+import { AuthenticationService } from "../services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class SignupComponent implements OnInit {
   submitted = false;
   registerForm: FormGroup;
 
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     public router: Router) {
   }
 
-  registerresponse: RegisterResponse;
+  // registerresponse: RegisterResponse;
   ngOnInit(): void {
     this.initialize();
   }

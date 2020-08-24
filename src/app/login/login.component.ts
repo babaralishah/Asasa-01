@@ -1,7 +1,7 @@
 ﻿
 // import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from "../authentication.service";
+import { AuthenticationService } from "../services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';

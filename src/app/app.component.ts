@@ -1,6 +1,6 @@
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { Component } from '@angular/core';
-import { AuthenticationService } from "./authentication.service";
+import { AuthenticationService } from "./services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import { MapserviceService } from "../mapservice.service";
+import { MapserviceService } from "../services/mapservice.service";
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',

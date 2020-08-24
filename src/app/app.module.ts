@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
+import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 import { ForgetpassverifyComponent } from './forgetpassverify/forgetpassverify.component';
@@ -27,7 +27,7 @@ import { SignupotpComponent } from './signupotp/signupotp.component';
     AppComponent,
     MapComponent,
     LoginComponent,
-    RegisterComponent,
+    SignupComponent,
     ForgetpassComponent,
     ForgetpassverifyComponent,
     NewpassComponent,

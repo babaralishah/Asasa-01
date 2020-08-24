@@ -8,7 +8,7 @@ import { ForgetpassverifyComponent } from './forgetpassverify/forgetpassverify.c
 import { NewpassComponent } from './newpass/newpass.component';
 import { SignupotpComponent } from './signupotp/signupotp.component';
 const routes: Routes = [
-  { path: 'map-component', component: MapComponent },
+  { path: 'map', component: MapComponent },
   { path: 'login-component', component: LoginComponent },
   { path: 'signup-component', component: SignupComponent },
   { path: 'forgetpass-component', component: ForgetpassComponent },

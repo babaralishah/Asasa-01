@@ -127,7 +127,7 @@ export class MapComponent implements OnInit {
       // create a DOM element for the marker
       const el = document.createElement('div');
       el.className = 'marker';
-      el.style.backgroundImage = 'url(/assets/asasamarker.png)';
+      el.style.backgroundImage = 'url(/assets/icons/asasamarker.png)';
       el.innerHTML = marker.tag;
       el.style.fontStyle = 'bold';
       el.style.textAlign = 'center';
@@ -304,7 +304,7 @@ export class MapComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       this.map.addSource('e-16', {
         type: 'image',
-        url: 'assets/E-16-crop.png',
+        url: 'assets/maps_images/E-16-crop.png',
         coordinates: [
           [ 72.877392, 33.652982],
           [ 72.898120, 33.652946],
@@ -337,7 +337,7 @@ export class MapComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       this.map.addSource('e-18', {
         type: 'image',
-        url: 'assets/E-18-crop.png',
+        url: 'assets/maps_images/E-18-crop.png',
         coordinates: [
           [72.834467, 33.635597],
           [72.858070, 33.647030],

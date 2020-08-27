@@ -28,7 +28,7 @@ export class AuthenticationService {
   // Function to Register the new user
   register(user: User): Observable<any> {
 
-    return this.httpClient.post(`${this.url}/user/signup`, user).pipe(
+    return this.httpClient.post(`${this.url}/users/signup`, user).pipe(
       catchError(this.handleError)
     )
   }
@@ -37,29 +37,29 @@ export class AuthenticationService {
   //Verifying the email address while signing the user up
   verifyOTPEmail(user: any): Observable<any> {
 
-    return this.httpClient.post(`${this.url}/user/verifyemail`, user).pipe(
+    return this.httpClient.post(`${this.url}/users/verifyemail`, user).pipe(
       catchError(this.handleError)
     )
   }
   //Verifying the user using otp code to his gmail to change his/her password
   verifyOTPCode(user: any): Observable<any> {
 
-    return this.httpClient.post(`${this.url}/user/password/verifyotpcode`, user).pipe(
+    return this.httpClient.post(`${this.url}/users/verifyotpcode`, user).pipe(
       catchError(this.handleError)
     )
   }
   //Adding new password after forgetting the old password
   newpassword(user: any): Observable<any> {
 
-    return this.httpClient.post(`${this.url}/user/password/newpassword`, user).pipe(
+    return this.httpClient.post(`${this.url}/users/newpassword`, user).pipe(
       catchError(this.handleError)
     )
   }
 
   // Function to Login the already existed user
-  login(user: User): Observable<any> {
-    // console.log('Hello', user.email);
-    return this.httpClient.post(`${this.url}/user/login`, user);
+ public login(user: any): Observable<any> {
+    console.log('Hello', user);
+    return this.httpClient.post(`${this.url}/users/login`, user);
       // .subscribe((data: any) => {
       //   localStorage.setItem('access_token', data.token)
       //   this.getUserProfile(data._id).subscribe((data) => {
@@ -70,7 +70,7 @@ export class AuthenticationService {
   } 
   
   verifyEmail (body:any): Observable<any>{
-    return this.httpClient.post(`${this.url}/user/password/verifyemail`, body);
+    return this.httpClient.post(`${this.url}/users/verifyemail`, body);
 
   }
   

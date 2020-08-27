@@ -1,4 +1,4 @@
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { Component } from '@angular/core';
 import { AuthenticationService } from "./services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';

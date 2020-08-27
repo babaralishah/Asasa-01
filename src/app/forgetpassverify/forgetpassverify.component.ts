@@ -49,12 +49,12 @@ export class ForgetpassverifyComponent implements OnInit {
     // });
     this.authServ.verifyOTPCode(user).subscribe(data => {
       console.log(data);
-      const status = data.status;
-      const msg = data.msg;
+      const status = data.success;
+      const msg = data.status;
       if (status) {
 
-        alert('\nMessage: ' + msg + '\n\n Status: ' + status)
-        this.router.navigate(['newpass-component',this.email]);
+        alert(msg)
+        this.router.navigate(['newpass-component', this.email]);
       } else {
         alert(msg);
       }

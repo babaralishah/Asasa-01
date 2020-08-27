@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -41,7 +41,7 @@ registerLocaleData(en);
   ],
   imports: [
     HttpClientModule,
-    MDBBootstrapModule.forRoot(),
+    // MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,

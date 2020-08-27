@@ -35,12 +35,17 @@ export class ForgetpassComponent implements OnInit {
     }
     this.authServ.verifyEmail(body).subscribe(data => {
       console.log(data);
-      const status = data.status;
+      const status = data.success;
+      const msg = data.status;
       const email = this.forgetPassForm.value.email;
       if (status) {
-        alert('Check your Email and change your password!!')
+        alert(msg)
 
         this.router.navigate(['forgetpassverify-component', email]);
+      }
+      else
+      {
+        alert(msg);
       }
     });
 

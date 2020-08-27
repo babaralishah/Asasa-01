@@ -50,17 +50,16 @@ export class NewpassComponent implements OnInit {
     this.authServ.newpassword(user).subscribe(data => {
       console.log("server response: ");
       console.log(data);
-      const status = data.status;
-      const msg = data.msg;
+      const status = data.success;
+      const msg = data.status;
       // console.log(this.newpassForm.value.password);
       // const email = this.newpassForm.value.email;
-      // if (status) {
-        // console.log(this.newpassForm.value.password);
-        alert('\nMessage: ' + msg + '\n\n Status: ' + status);
-        // this.router.navigate(['newpass-component',this.email]);
-      // } else {
-        // alert(msg);
-      // }
+      if (status) {
+        alert(msg);
+        this.router.navigate(['login-component']);
+      } else {
+        alert(msg);
+      }
     });
   }
 }

@@ -7,6 +7,11 @@ import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 import { ForgetpassverifyComponent } from './forgetpassverify/forgetpassverify.component';
 import { NewpassComponent } from './newpass/newpass.component';
 import { SignupotpComponent } from './signupotp/signupotp.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { InventoryComponent } from './dashboard/inventory/inventory.component';
+import { UsersComponent } from './dashboard/users/users.component';
+import { LeadsComponent } from './dashboard/leads/leads.component';
 const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'login-component', component: LoginComponent },
@@ -14,7 +19,12 @@ const routes: Routes = [
   { path: 'forgetpass-component', component: ForgetpassComponent },
   { path: 'forgetpassverify-component/:email', component: ForgetpassverifyComponent },
   { path: 'newpass-component/:email', component: NewpassComponent },
-  { path: 'signupotp-component/:email', component: SignupotpComponent }
+  { path: 'signupotp-component/:email', component: SignupotpComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'inventory', component: InventoryComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'leads', component: LeadsComponent }
 ];
 
 @NgModule({

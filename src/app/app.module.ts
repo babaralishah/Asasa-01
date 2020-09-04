@@ -25,7 +25,21 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { InventoryComponent } from './dashboard/inventory/inventory.component';
+import { UsersComponent } from './dashboard/users/users.component';
+import { LeadsComponent } from './dashboard/leads/leads.component';
+import { TableFilterPipe } from './Pipes/table-filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TableFilter02Pipe } from './Pipes/table-filter02.pipe';
+import { TableFilter03Pipe } from './Pipes/table-filter03.pipe';
+import { TableFilter04Pipe } from './Pipes/table-filter04.pipe';
+import { TableFilter05Pipe } from './Pipes/table-filter05.pipe';
+import { TableFilter06Pipe } from './Pipes/table-filter06.pipe';
 
+// import { HighlightDirective } from './directives/highlight.directive';
+// import { FilterPipe } from './pipes/filter.pipe';
 registerLocaleData(en);
 
 @NgModule({
@@ -37,7 +51,20 @@ registerLocaleData(en);
     ForgetpassComponent,
     ForgetpassverifyComponent,
     NewpassComponent,
-    SignupotpComponent
+    SignupotpComponent,
+    DashboardComponent,
+    ProfileComponent,
+    InventoryComponent,
+    UsersComponent,
+    LeadsComponent,
+    // FilterPipe,
+    // HighlightDirective
+    TableFilterPipe,
+    TableFilter02Pipe,
+    TableFilter03Pipe,
+    TableFilter04Pipe,
+    TableFilter05Pipe,
+    TableFilter06Pipe
   ],
   imports: [
     HttpClientModule,
@@ -49,7 +76,8 @@ registerLocaleData(en);
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
     // MaterialModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

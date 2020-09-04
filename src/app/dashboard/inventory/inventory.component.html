@@ -1,0 +1,111 @@
+<div class="inventory"><br>
+    <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;Inventory Management</b></h1>
+    <br>
+    <div>
+        <button class="btn btn-primary rounded-pill">Add New</button>
+        <button class="btn btn-primary rounded-pill">Filters</button>
+        <div class="dropdown">
+            <button class="dropbtn" class="btn btn-primary rounded-pill">Select Agent</button>
+            <div class="dropdown-content">
+                <a href="#">Agent 1</a>
+                <a href="#">Agent 2</a>
+                <a href="#">Agent 3</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pull-right">
+        <!-- <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button> -->
+        <div class="card-body row">
+            <div class="col-auto">
+                <i class="fa fa-search icon"></i>
+            </div>
+            <!--end of col-->
+            <div class="col">
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search"
+                    placeholder="Search topic or keyword">
+                <!-- <input class="form-control form-control-borderless" type="search" placeholder="Search topics or keywords"> -->
+            </div>
+
+            <!-- <button class="btn btn-primary rounded-pill" type="submit">Search</button> -->
+
+            <button class="btn btn-primary rounded-pill">Print</button>
+            <button class="btn btn-primary rounded-pill">Excel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+    <br><br><br>
+    <!-- Inventory management table is below -->
+
+    <table class="table table-hover" class="table table-hover table-dark">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Area</th>
+            <th scope="col">Type</th>
+            <th scope="col">Demand</th>
+            <th scope="col">Purpose</th>
+            <th scope="col">Beds</th>
+            <th scope="col">Client Details</th>
+            <th scope="col">Agent Assigned</th>
+            <th scope="col">Operations</th>
+        </thead>
+
+        <tbody>
+            <td>
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="search_id" placeholder="Search ID">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="search_location" placeholder="Search">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="search_area" placeholder="Search">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="search_type" placeholder="Search">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="search_demand" placeholder="Search">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" placeholder="">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" placeholder="">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" placeholder="">
+            </td>
+            <td>
+                <input class="form-control" id="myInput" type="text" placeholder="">
+            </td>
+            <td>
+                <i class="fa fa-search icon"></i>
+            </td>
+            <!-- <li *ngFor="let item of data | tableFilter : query">{{item.name}}</li> -->
+            <tr
+                *ngFor="let user of user | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
+                <td>{{ user.Id }}</td>
+                <td>{{ user.Location }}</td>
+                <td>{{ user.Area }}</td>
+                <td>{{ user.Type }}</td>
+                <td>{{ user.Demand }}</td>
+                <td>{{ user.Purpose }}</td>
+                <td>{{ user.Beds }}</td>
+                <td>{{ user.Client}}</td>
+                <td>{{ user.Agent }}</td>
+                <td><i class="fa fa-edit icon"></i><a role="button">Edit</a>
+                    <a><i class="fa fa-trash icon"></i></a></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <!-- <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script> -->
+
+</div>

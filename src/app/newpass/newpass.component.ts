@@ -22,7 +22,6 @@ export class NewpassComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(param => {
       this.email = param.email;
-      // console.log(this.email);
     });
     this.initialize();
   }
@@ -44,16 +43,11 @@ export class NewpassComponent implements OnInit {
       newpassword: this.newpassForm.value.password
     };
 
-    // this.authServ.verifyOTPEmail(user).subscribe(data => {
-    //   console.log(data);
-    // });
     this.authServ.newpassword(user).subscribe(data => {
       console.log("server response: ");
       console.log(data);
       const status = data.success;
       const msg = data.status;
-      // console.log(this.newpassForm.value.password);
-      // const email = this.newpassForm.value.email;
       if (status) {
         alert(msg);
         this.router.navigate(['login-component']);

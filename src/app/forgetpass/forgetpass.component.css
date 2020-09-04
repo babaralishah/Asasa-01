@@ -60,23 +60,12 @@ margin-left: 12px;
 }
 
 .btn{
-  /* padding: 0px; */
-  /* height: 30px; */
+  margin-left: 30px;
   width: 100px;
   font-size: 14px;
   background-color: #38baa2 ;
   color: white;
   border: 1px solid transparent;
-}
-
-.btn1{
-  /* height: 30px; */
-  width: 100px;
-  font-size: 13px;
-  background-color: #38baa2 ;
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 3px;
 }
 
 .left-img{

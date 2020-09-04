@@ -29,8 +29,8 @@
                     <div class="input-group">
                         <i class="fa fa-user icon"></i>
                         <input class="form-control" class="input-field"
-                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="email"
-                            name="email" formControlName="email" placeholder="Email address" required="" autofocus=""
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="email" name="email"
+                            formControlName="email" placeholder="Email address" required="" autofocus=""
                             class="form-control rounded-pill border-0 shadow-sm px-4">
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                             <div *ngIf="f.email.errors.required">Email is required</div>
@@ -41,9 +41,8 @@
                 <div class="form-group">
                     <div class="input-group">
                         <i class="fa fa-lock icon"></i>
-                        <input class="input-field" type="password" formControlName="password"
-                            placeholder="Password" required=""
-                            class="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
+                        <input class="input-field" type="password" formControlName="password" placeholder="Password"
+                            required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
                             [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                             <div *ngIf="f.password.errors.required">Password is required</div>
@@ -55,9 +54,9 @@
                 </div>
                 <div class="form-group">
                     <br>
-                    <button type="submit" class="btn btn-info rounded-pill" >
-                    <!-- [disabled]="!loginForm.valid"> -->
-                    Login</button>
+                    <button type="submit" class="btn btn-info rounded-pill">
+                        <!-- [disabled]="!loginForm.valid"> -->
+                        Login</button>
                 </div>
                 <div class="custom-control custom-checkbox mb-3">
                     <!-- <input id="customCheck1" type="checkbox" checked class="custom-control-input"> -->

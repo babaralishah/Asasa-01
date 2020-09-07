@@ -37,6 +37,7 @@ import { TableFilter03Pipe } from './Pipes/table-filter03.pipe';
 import { TableFilter04Pipe } from './Pipes/table-filter04.pipe';
 import { TableFilter05Pipe } from './Pipes/table-filter05.pipe';
 import { TableFilter06Pipe } from './Pipes/table-filter06.pipe';
+import { InactiveComponent } from './dashboard/inactive/inactive.component';
 
 // import { HighlightDirective } from './directives/highlight.directive';
 // import { FilterPipe } from './pipes/filter.pipe';
@@ -64,7 +65,8 @@ registerLocaleData(en);
     TableFilter03Pipe,
     TableFilter04Pipe,
     TableFilter05Pipe,
-    TableFilter06Pipe
+    TableFilter06Pipe,
+    InactiveComponent
   ],
   imports: [
     HttpClientModule,

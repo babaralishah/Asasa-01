@@ -78,9 +78,10 @@ margin-left: 12px;
 	height:auto;
   min-height: 100vh;
 }
-
 .left-img{
-  width:61%}
+  width:45%;
+  margin-left: 80px;
+}
 
 .inputs{
   margin-left: 15px;

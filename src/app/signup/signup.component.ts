@@ -1,5 +1,4 @@
 
-import { RegisterResponse } from './RegisterResponse';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "../services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';
@@ -32,20 +31,7 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-  // check() {
-  //   if (document.getElementById('password') ==
-  //     document.getElementById('confirm')) {
-  //     document.getElementById('message').style.color = 'green';
-  //     document.getElementById('message').innerHTML = 'matching';
-  //     console.log('check function 01');
-  //   } else {
-  //     document.getElementById('message').style.color = 'red';
-  //     document.getElementById('message').innerHTML = 'password not matching';
-  //     console.log('check function 02');
-  //   }
-  // }
   registerUser() {
-    // this.check();
     this.submitted = true;
 
     // stop here if form is invalid
@@ -55,9 +41,6 @@ export class SignupComponent implements OnInit {
 
     alert('SUCCESS!! :-)\n' + JSON.stringify(this.registerForm.value))
 
-    // this.authService.getAll().subscribe((data) => {
-    //   console.log(data);
-    // })
     console.log(this.registerForm.value);
     this.authService.register(this.registerForm.value).subscribe((data) => {
       console.log(data);
@@ -79,15 +62,4 @@ export class SignupComponent implements OnInit {
   }
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
-
-  // onSubmit() {
-  //   this.submitted = true;
-
-  //   // stop here if form is invalid
-  //   if (this.registerForm.invalid) {
-  //     return;
-  //   }
-
-  //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-  // }
 }

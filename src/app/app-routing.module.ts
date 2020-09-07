@@ -12,6 +12,7 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { InventoryComponent } from './dashboard/inventory/inventory.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { LeadsComponent } from './dashboard/leads/leads.component';
+import { InactiveComponent } from './dashboard/inactive/inactive.component';
 const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'login-component', component: LoginComponent },
@@ -21,10 +22,12 @@ const routes: Routes = [
   { path: 'newpass-component/:email', component: NewpassComponent },
   { path: 'signupotp-component/:email', component: SignupotpComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile/:email', component: ProfileComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'inventory', component: InventoryComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'leads', component: LeadsComponent }
+  { path: 'leads', component: LeadsComponent },
+  { path: 'inactive', component: InactiveComponent }
 ];
 
 @NgModule({

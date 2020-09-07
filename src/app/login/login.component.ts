@@ -1,5 +1,4 @@
 ﻿
-// import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "../services/authentication.service";
 import { Router, ActivatedRoute } from '@angular/router';
@@ -17,6 +16,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  mobileView: boolean;
   constructor(
     public formBuilder: FormBuilder, // Creating an instance of Formbuilder
     public authService: AuthenticationService, // Instance of Authentication services created in front end
@@ -24,6 +24,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (window.innerWidth < 600) {
+      this.mobileView = true;
+      
+    } else if (window.innerWidth > 600) {
+      this.mobileView = false;
+    }
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -37,21 +43,23 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-     console.log('user login data: ',this.loginForm.value);
+    console.log('user login data: ', this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(data => {
 
-      console.log("Subscribed Data: ",data);
+      console.log("Subscribed Data: ", data);
       const success = data.success;
       const status = data.status;
       // const msg: string = data.msg;
       console.log("Status: " + status);
       console.log("Success: " + success);
-      // console.log("Message: " + msg);
+      const email = this.loginForm.value.email;
       if (success) {
 
         alert('SUCCESS!! :-)')
+        this.router.navigate(['profile', email]);
       } else {
         alert('Invalid email or password!');
+        this.router.navigate(['profile', email]);
       }
     });
   }

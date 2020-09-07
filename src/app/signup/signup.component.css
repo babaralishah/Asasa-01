@@ -1,3 +1,7 @@
+.lastdiv{
+  
+  margin-left: 40px;
+}
 a{
   color:#38baa2;
   }
@@ -78,16 +82,17 @@ margin-left: 10px;
 
 .btn{
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 40px;
   width: 100px;
   font-size: 14px;
   background-color: #38baa2 ;
   color: white;
   border: 1px solid transparent;
 }
-
 .left-img{
-  width:61%}
+  width:45%;
+  margin-left: 80px;
+}
 
 .inputs{
   margin-left: 15px;

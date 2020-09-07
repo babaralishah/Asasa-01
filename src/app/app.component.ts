@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class AppComponent {
   isShown:boolean=false;
-  title = 'asasa';
+  title = 'My Asasa Real Estate';
   loginForm: FormGroup; // Instance of Form group that will get form data from user end (i.e; login.html)
   // registerForm: FormGroup;
   loading = false;

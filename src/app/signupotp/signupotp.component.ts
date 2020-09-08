@@ -51,7 +51,7 @@ export class SignupotpComponent implements OnInit {
       if (status) {
 
         alert('\nMessage: ' + msg + '\n\n Status: ' + status)
-        this.router.navigate(['']);
+        this.router.navigate(['profile', this.email]);
       } else {
         alert(msg);
       }

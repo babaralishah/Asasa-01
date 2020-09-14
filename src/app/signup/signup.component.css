@@ -5,13 +5,12 @@
 a{
   color:#38baa2;
   }
-h2{
-  color: #38baa2;
-  font-weight: 600;
-  margin-left: 200px;
-  margin-top: -10px;
-}
 
+  h2{
+    color: #38baa2;
+    font-weight: 600;
+    margin-top: -10px;
+  }
 input{
   border: 2px solid #0000001a !important;
   border-radius: 50rem!important;

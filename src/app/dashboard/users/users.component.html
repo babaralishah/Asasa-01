@@ -39,17 +39,17 @@
         </thead>
 
         <tbody>
-            <td>
-                <input class="form-control" type="text" [(ngModel)]="search_id" placeholder="Search">
+            <!-- <td>
+                <input class="form-control" type="text" [(ngModel)]="data.users.userId" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="search_client" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="user.Client" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="search_area" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="user.Area" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="search_location" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="user.Location" placeholder="Search">
             </td>
             <td>
                 <input class="form-control" type="text" placeholder="">
@@ -62,16 +62,15 @@
             </td>
             <td>
                 <i class="fa fa-search icon"></i>
-            </td>
-            <tr
-                *ngFor="let user of users | tableFilter03: search_area | tableFilter02: search_location | tableFilter06: search_client | tableFilter: search_id | filter: general_search">
-                <td>{{ user.Id }}</td>
-                <td>{{ user.Client }}</td>
-                <td>{{ user.Area }}</td>
-                <td>{{ user.Location }}</td>
-                <td>{{ user.Email }}</td>
-                <td>{{ user.Access }}</td>
-                <td>{{ user.Status }}</td>
+            </td> -->
+            <tr *ngFor="let user of data.users">
+                <td>{{ user?.userId }}</td>
+                <td>{{  user?.fullname |titlecase }}</td>
+                <td>{{ user?.contact }}</td>
+                <td>{{ user?.location | titlecase}}</td>
+                <td>{{ user.email }}</td>
+                <td>{{user.access }}</td>
+                <td>{{user.status }}</td>
                 <td><i class="fa fa-edit icon"></i><a role="button">Edit</a>
                     <a><i class="fa fa-trash icon"></i></a></td>
             </tr>

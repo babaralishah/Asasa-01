@@ -15,14 +15,14 @@
 			</div>
 		</div>
 
-		<div class="col-1 v2">
+		<div class="col-1 v2" *ngIf="mobileView ==false">
 			<div class="vl"></div>
 			Register
 			<div class="vl"></div>
 		</div>
 
 		<div class="col-sm-6 col-md-6 right">
-			<h2>Welcome to my asasa</h2>
+			<h2 class="text-center">Welcome to my asasa</h2>
 			<form class="form-register" [formGroup]="registerForm" (ngSubmit)="registerUser()">
 				<div class="form-group">
 					<div class="input-group">

@@ -12,6 +12,7 @@ import { first } from 'rxjs/operators';
 export class SignupComponent implements OnInit {
   submitted = false;
   registerForm: FormGroup;
+  mobileView: boolean;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -22,6 +23,12 @@ export class SignupComponent implements OnInit {
   // registerresponse: RegisterResponse;
   ngOnInit(): void {
     this.initialize();
+    if (window.innerWidth < 600) {
+      this.mobileView = true;
+
+    } else if (window.innerWidth > 600) {
+      this.mobileView = false;
+    }
   }
 
   initialize() {

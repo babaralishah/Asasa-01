@@ -1,3 +1,7 @@
+.fa-search:before {
+    margin-left: 39px;
+    content: "\f002";
+}
 th {
     background-color: black;
     color: white;

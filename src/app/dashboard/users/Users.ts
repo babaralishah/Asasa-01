@@ -1,20 +1,20 @@
 export class Users {
-    Id: string;
-    Client: string;
-    Area: string;
-    Location: string;
-    Email: string;
-    Access: string;
-    Status: string;
+    userId: string;
+    fullname: string;
+    contact: string;
+    location: string;
+    email: string;
+    access: string;
+    status: string;
 
     constructor(Id, Client, Area, Location, Email, Access, Status) {
-        this.Id = Id;
-        this.Client = Client;
-        this.Area = Area;
-        this.Location = Location;
-        this.Email = Email;
-        this.Access = Access;
-        this.Status = Status;
+        this.userId = Id;
+        this.fullname = Client;
+        this.contact = Area;
+        this.location = Location;
+        this.email = Email;
+        this.access = Access;
+        this.status = Status;
     }
 
 }

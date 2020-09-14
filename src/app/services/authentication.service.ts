@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+// import { Users } from '../dashboard/users/Users';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,33 +23,45 @@ export class AuthenticationService {
     // this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     // this.currentUser = this.currentUserSubject.asObservable();
   }
-  public getAll(): Observable<any> {
-    return this.httpClient.get<User[]>(`${this.url}/user`);
+
+  ///////// Getting user table data //////////////
+  getUsers() {
+    return this.httpClient.get<any>(`${this.url}/users/find`);
   }
-  // Function to Register the new user
+  ////////////// Send new row table data /////////////
+  // createUsers(user: Users[]) {
+  //   return this.httpClient.post(`${this.url}/users`, user).pipe(
+  //     catchError(this.handleError)
+  //   )
+  // }
+
+  // public getAll(): Observable<any> {
+  //   return this.httpClient.get<User[]>(`${this.url}/user`);
+  // }
+
+  ///////// Function to Register the new user /////////////
   register(user: User): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/signup`, user).pipe(
       catchError(this.handleError)
     )
   }
-  /////////////////////////////////////
   /* API Call to verify otp code */
-  //Verifying the email address while signing the user up
+  ////// Verifying the email address while signing the user up ///////////////////
   verifyOTPEmail(user: any): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/verifyemail`, user).pipe(
       catchError(this.handleError)
     )
   }
-  //Verifying the user using otp code to his gmail to change his/her password
+  ///////// Verifying the user using otp code to his gmail to change his/her password /////////////
   verifyOTPCode(user: any): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/verifyotpcode`, user).pipe(
       catchError(this.handleError)
     )
   }
-  //Adding new password after forgetting the old password
+  ///////////// Adding new password after forgetting the old password ////////
   newpassword(user: any): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/newpassword`, user).pipe(
@@ -56,25 +69,26 @@ export class AuthenticationService {
     )
   }
 
-  // Function to Login the already existed user
- public login(user: any): Observable<any> {
+  /////////// Function to Login the already existed user /////////////
+  public login(user: any): Observable<any> {
     console.log('Hello', user);
     return this.httpClient.post(`${this.url}/users/login`, user);
-      // .subscribe((data: any) => {
-      //   localStorage.setItem('access_token', data.token)
-      //   this.getUserProfile(data._id).subscribe((data) => {
-      //     this.currentUser = data;
-      //     this.router.navigate(['users/profile/' + data.msg._id]);
-      //   })
-      // })
-  } 
-  
-  verifyEmail (body:any): Observable<any>{
+    // .subscribe((data: any) => {
+    //   localStorage.setItem('access_token', data.token)
+    //   this.getUserProfile(data._id).subscribe((data) => {
+    //     this.currentUser = data;
+    //     this.router.navigate(['users/profile/' + data.msg._id]);
+    //   })
+    // })
+  }
+
+  ///////////// Verify User Email ////////////////
+  verifyEmail(body: any): Observable<any> {
     return this.httpClient.post(`${this.url}/users/verifyemail`, body);
 
   }
-  
-  
+
+  /////////////// Get Users Token //////////////////////////
   getAccessToken() {
     return localStorage.getItem('access_token');
   }
@@ -114,4 +128,5 @@ export class AuthenticationService {
     }
     return throwError(msg);
   }
+  // ////////////////////////////////////////
 }

@@ -5,26 +5,21 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  -->
-
 <div class="container">
     <div class="row">
         <div class="col-sm-5 col-md-5 left">
             <div>
-
                 <img class="left-img" src="assets/icons/asasa.gif" />
             </div>
         </div>
-
         <div class="col-1 v2 " *ngIf="mobileView ==false">
             <div class="vl"></div>
             Log - in
             <div class="vl"></div>
         </div>
-
         <div class="col-sm-6 col-md-6 right">
             <h2 class="text-center">Welcome to my asasa</h2>
             <form class="form-register" [formGroup]="loginForm" (ngSubmit)="loginUser()">
-
                 <div class="form-group" class='input-container'>
                     <div class="input-group">
                         <i class="fa fa-user icon"></i>
@@ -67,9 +62,6 @@
                     <a routerLink="/signup-component"> <b>Sign up!</b></a>
                 </div>
             </form>
-
         </div>
     </div>
-
-
 </div>

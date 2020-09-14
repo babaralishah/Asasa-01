@@ -7,7 +7,8 @@ import { User } from '../dashboard/inventory/User';
 })
 export class TableFilterPipe implements PipeTransform {
     transform(
-        user: User[],
+        // user: User[],
+        user: any,
         search_id: string
     ): User[] {
 
@@ -15,7 +16,7 @@ export class TableFilterPipe implements PipeTransform {
             return user;
         }
         return user.filter(user =>
-            user.Id.toLowerCase().indexOf(search_id.toLowerCase()) !== -1);
+            user.userId.toLowerCase().indexOf(search_id.toLowerCase()) !== -1);
         // if (!user) return [];
         // if (!search_location) return user;
         // search_location = search_location.toLocaleLowerCase();

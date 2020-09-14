@@ -1,0 +1,115 @@
+<div class=" register">
+    <div class="row">
+        <div class="col-md-2 register-left">
+            <img src="assets/icons/asasa.gif" alt="" />
+            <h2><b>Asasa Real Estate</b></h2>
+        </div>
+        <div class="col-md-10 col-sm-10 register-right">
+            <form [formGroup]="adduserForm">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h2 class="register-heading">Add User</h2>
+                        <div class="row register-form">
+
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <br><br>
+                                        User ID
+                                        <input type="number" class="form-control" formControlName="userId" id="userId"
+                                            class="question" required autocomplete="off"
+                                            [ngClass]="{ 'is-invalid': submitted && f.userId.errors }" />
+                                        <label for="nme"><span>Enter ID</span></label>
+                                        <div *ngIf="submitted && f.userId.errors" class="invalid-feedback">
+                                            <div *ngIf="f.userId.errors.required">Id is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <br><br>
+                                        Full Name
+                                        <input type="text" class="form-control" formControlName="fullname" id="fullname"
+                                            class="question" required autocomplete="off"
+                                            [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }" />
+                                        <label for="nme"><span>Enter Full Name</span></label>
+                                        <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                                            <div *ngIf="f.fullname.errors.required">Name is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <br><br>
+                                Contact #
+                                <input type="number" class="form-control" formControlName="contact" class="question"
+                                    required autocomplete="off" />
+                                <label for="nme"><span>Enter Location</span></label>
+                            </div>
+                            <div class="col-md-6">
+                                <br><br>
+                                Location
+                                <input type="text" class="form-control" formControlName="location" class="question"
+                                    required autocomplete="off" />
+                                <label for="nme"><span>Enter Location</span></label>
+                            </div>
+                            <div class="col-md-6">
+                                <br><br>
+                                Email Address
+                                <input type="email" class="form-control" formControlName="email" class="question"
+                                    required autocomplete="off" />
+                                <label for="nme"><span>Enter Location</span></label>
+                            </div>
+                            <!-- Right side column -->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <br><br>
+                                    Access
+                                    <div class="form-group" class="question">
+                                        <input formControlName="access" class="form-control" style=" 
+                                    border-bottom: 1px solid black; 
+                                    width: 360px;" type="text" list="productName" />
+                                        <datalist id="productName">
+                                            <option value="Pen">Pen</option>
+                                            <option value="Pencil">Pencil</option>
+                                            <option value="Paper">Paper</option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <br><br>
+                            </div>
+                            <!-- Left side column -->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <br>
+                                    Status
+                                    <div class="form-group" class="question">
+                                        <input formControlName="status" class="form-control" style=" 
+                                    border-bottom: 1px solid black; 
+                                    width: 360px;" type="text" name="product" list="productName" />
+                                        <datalist id="productName">
+                                            <option value="Pen">Pen</option>
+                                            <option value="Pencil">Pencil</option>
+                                            <option value="Paper">Paper</option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <br><br>
+                                <div class="form-group" class="center">
+                                    <button (click)="submitForm()" type="submit" class="btn btn-primary">Add</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-danger">Delete</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

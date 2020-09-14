@@ -14,6 +14,8 @@ import { UsersComponent } from './dashboard/users/users.component';
 import { LeadsComponent } from './dashboard/leads/leads.component';
 import { InactiveComponent } from './dashboard/inactive/inactive.component';
 import { OptionsComponent } from './dashboard/options/options.component';
+import { AddUsersComponent } from './dashboard/users/add-users/add-users.component';
+
 const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'login-component', component: LoginComponent },
@@ -29,7 +31,8 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'leads', component: LeadsComponent },
   { path: 'inactive', component: InactiveComponent },
-  { path: 'options', component: OptionsComponent }
+  { path: 'options', component: OptionsComponent },
+  { path: 'add-users', component: AddUsersComponent }
 ];
 
 @NgModule({

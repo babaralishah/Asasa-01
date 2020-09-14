@@ -1,25 +1,19 @@
 <div class="users">
     <br>
-    <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users</b></h1>
+    <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;Users</b></h1>
     <br>
     <div>
-        <button class="btn btn-primary rounded-pill">Add New</button>
+        <button class="btn btn-primary rounded-pill" routerLink="/add-users">Add New</button>
     </div>
     <div class="pull-right">
-        <!-- <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button> -->
         <div class="card-body row">
             <div class="col-auto">
                 <i class="fa fa-search icon"></i>
             </div>
-            <!--end of col-->
             <div class="col">
                 <input class="form-control" type="search" [(ngModel)]="general_search"
                     placeholder="Search topics or keywords">
             </div>
-            <!--end of col-->
-
-            <button class="btn btn-primary rounded-pill" type="submit">Search</button>
         </div>
     </div>
     <br><br><br>
@@ -38,18 +32,18 @@
             </tr>
         </thead>
 
-        <tbody>
-            <!-- <td>
-                <input class="form-control" type="text" [(ngModel)]="data.users.userId" placeholder="Search">
+        <tbody *ngIf="data">
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="data.userId" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="user.Client" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="data.fullname" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="user.Area" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="data.contact" placeholder="Search">
             </td>
             <td>
-                <input class="form-control" type="text" [(ngModel)]="user.Location" placeholder="Search">
+                <input class="form-control" type="text" [(ngModel)]="data.location" placeholder="Search">
             </td>
             <td>
                 <input class="form-control" type="text" placeholder="">
@@ -62,15 +56,16 @@
             </td>
             <td>
                 <i class="fa fa-search icon"></i>
-            </td> -->
-            <tr *ngFor="let user of data.users">
+            </td>
+            <tr
+                *ngFor="let user of data | tableFilter06: data.fullname | tableFilter04: data.contact | tableFilter02: data.location | tableFilter: data.userId | filter: general_search">
                 <td>{{ user?.userId }}</td>
-                <td>{{  user?.fullname |titlecase }}</td>
-                <td>{{ user?.contact }}</td>
-                <td>{{ user?.location | titlecase}}</td>
+                <td>{{  user.fullname |titlecase}}</td>
+                <td>{{ user.contact }}</td>
+                <td>{{ user.location | titlecase}}</td>
                 <td>{{ user.email }}</td>
-                <td>{{user.access }}</td>
-                <td>{{user.status }}</td>
+                <td>{{user.access | titlecase}}</td>
+                <td>{{user.status | titlecase}}</td>
                 <td><i class="fa fa-edit icon"></i><a role="button">Edit</a>
                     <a><i class="fa fa-trash icon"></i></a></td>
             </tr>

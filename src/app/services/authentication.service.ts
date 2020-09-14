@@ -29,11 +29,12 @@ export class AuthenticationService {
     return this.httpClient.get<any>(`${this.url}/users/find`);
   }
   ////////////// Send new row table data /////////////
-  // createUsers(user: Users[]) {
-  //   return this.httpClient.post(`${this.url}/users`, user).pipe(
-  //     catchError(this.handleError)
-  //   )
-  // }
+  createUsers(user: any) {
+    console.log('Create user func')
+    return this.httpClient.post(`${this.url}/users/save`, user).pipe(
+      catchError(this.handleError)
+    )
+  }
 
   // public getAll(): Observable<any> {
   //   return this.httpClient.get<User[]>(`${this.url}/user`);

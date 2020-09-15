@@ -40,6 +40,7 @@ import { TableFilter06Pipe } from './Pipes/table-filter06.pipe';
 import { InactiveComponent } from './dashboard/inactive/inactive.component';
 import { OptionsComponent } from './dashboard/options/options.component';
 import { AddUsersComponent } from './dashboard/users/add-users/add-users.component';
+import { ToastrModule } from 'ngx-toastr';
 
 // import { HighlightDirective } from './directives/highlight.directive';
 // import { FilterPipe } from './pipes/filter.pipe';
@@ -73,12 +74,14 @@ registerLocaleData(en);
     AddUsersComponent
   ],
   imports: [
+   
     HttpClientModule,
     // MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,

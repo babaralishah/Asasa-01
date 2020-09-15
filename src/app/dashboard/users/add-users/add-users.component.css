@@ -52,7 +52,7 @@
       margin: 0;
       border: none;
       width: 90%;
-      background: rgba(0, 0, 0, 0);
+      background: none;
       transition: padding-top 0.1s ease, margin-top 0.1s ease;
       overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
     }
@@ -172,7 +172,7 @@
     border: none;
     border-bottom: 1px solid;
     border-radius: 0rem;
-    width: 90%;
+    width: 92%;
     /* color:#38baa2; */
   }
   /*  */
@@ -229,7 +229,7 @@
       margin-bottom: 5%;
       width: 50%;
       -webkit-animation: mover 3s infinite  alternate;
-      animation: mover 0.3s infinite  alternate;
+      animation: mover 0.5s infinite  alternate;
   }
   @-webkit-keyframes mover {
       0% { transform: translateY(0); }

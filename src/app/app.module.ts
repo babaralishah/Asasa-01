@@ -41,6 +41,8 @@ import { InactiveComponent } from './dashboard/inactive/inactive.component';
 import { OptionsComponent } from './dashboard/options/options.component';
 import { AddUsersComponent } from './dashboard/users/add-users/add-users.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AddLeadsComponent } from './dashboard/leads/add-leads/add-leads.component';
+import { AddInventoriesComponent } from './dashboard/inventory/add-inventories/add-inventories.component';
 
 // import { HighlightDirective } from './directives/highlight.directive';
 // import { FilterPipe } from './pipes/filter.pipe';
@@ -71,7 +73,9 @@ registerLocaleData(en);
     TableFilter06Pipe,
     InactiveComponent,
     OptionsComponent,
-    AddUsersComponent
+    AddUsersComponent,
+    AddLeadsComponent,
+    AddInventoriesComponent
   ],
   imports: [
    

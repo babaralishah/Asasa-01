@@ -6,48 +6,54 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ToastrService } from "ngx-toastr";
 
 @Component({
-  selector: 'app-options',
-  templateUrl: './options.component.html',
-  styleUrls: ['./options.component.css']
+  selector: 'app-add-leads',
+  templateUrl: './add-leads.component.html',
+  styleUrls: ['./add-leads.component.css']
 })
-export class OptionsComponent implements OnInit {
+export class AddLeadsComponent implements OnInit {
   submitted = false;
   user: any;
   cartService: any;
-  addoptionForm: FormGroup;
+  addleadForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private router: Router,
     private toastr: ToastrService) { }
   formDeclare() {
-    this.addoptionForm = this.formBuilder.group({
-      add_newcity: ['', Validators.required],
-      added_cities: ['', Validators.required],
-      add_newloc: ['', Validators.required],
-      added_loc: ['', Validators.required],
-      enter_newloc: ['', Validators.required],
-      add_newtype: ['', Validators.required],
-      added_type: ['', Validators.required],
-      add_newstatus: ['', Validators.required],
-      added_status: ['', Validators.required]
+    this.addleadForm = this.formBuilder.group({
+      location: ['', Validators.required],
+      client: ['', Validators.required],
+      id: ['', Validators.required],
+      agent_status: ['', Validators.required],
+      admin_status: ['', Validators.required],
+      phone_no: ['', Validators.required],
+      added_on: ['', Validators.required],
+      area: ['', Validators.required],
+      type: ['', Validators.required],
+      purpose: ['', Validators.required],
+      prop_type: ['', Validators.required],
+      prop_no: ['', Validators.required],
+      demand: ['', Validators.required],
+      comment: ['', Validators.required],
+      assigned_to: ['', Validators.required]
     });
   }
   // convenience getter for easy access to form fields
-  get f() { return this.addoptionForm.controls; }
+  get f() { return this.addleadForm.controls; }
   ngOnInit(): void {
     this.formDeclare();
   }
   submitForm() {
     this.submitted = true;    // stop here if form is invalid
-    if (this.addoptionForm.invalid) {
+    if (this.addleadForm.invalid) {
       this.toastr.error('Fields Empty', 'Error', {
         timeOut: 5000
       });
       console.log('Erroneous')
       return;
     }
-    this.addoptionForm.reset();
+    this.addleadForm.reset();
     this.toastr.success('Lead Added', 'Success', {
       timeOut: 9000
     });

@@ -2,7 +2,7 @@
     <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;Inventory Management</b></h1>
     <br>
     <div>
-        <button class="btn btn-primary rounded-pill">Add New</button>
+        <button class="btn btn-primary rounded-pill" routerLink="/add-inventories">Add New</button>
         <button class="btn btn-primary rounded-pill">Filters</button>
         <div class="dropdown">
             <button class="dropbtn" class="btn btn-primary rounded-pill">Select Agent</button>
@@ -15,8 +15,6 @@
     </div>
 
     <div class="pull-right">
-        <!-- <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button> -->
         <div class="card-body row">
             <div class="col-auto">
                 <i class="fa fa-search icon"></i>
@@ -25,10 +23,7 @@
             <div class="col">
                 <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search"
                     placeholder="Search topic or keyword">
-                <!-- <input class="form-control form-control-borderless" type="search" placeholder="Search topics or keywords"> -->
             </div>
-
-            <!-- <button class="btn btn-primary rounded-pill" type="submit">Search</button> -->
 
             <button class="btn btn-primary rounded-pill">Print</button>
             <button class="btn btn-primary rounded-pill">Excel</button>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,7 +77,6 @@
             <td>
                 <i class="fa fa-search icon"></i>
             </td>
-            <!-- <li *ngFor="let item of data | tableFilter : query">{{item.name}}</li> -->
             <tr
                 *ngFor="let user of user | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
                 <td>{{ user.Id }}</td>
@@ -100,12 +94,4 @@
         </tbody>
 
     </table>
-
-    <!-- <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script> -->
-
 </div>

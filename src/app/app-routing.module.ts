@@ -15,6 +15,8 @@ import { LeadsComponent } from './dashboard/leads/leads.component';
 import { InactiveComponent } from './dashboard/inactive/inactive.component';
 import { OptionsComponent } from './dashboard/options/options.component';
 import { AddUsersComponent } from './dashboard/users/add-users/add-users.component';
+import { AddLeadsComponent } from './dashboard/leads/add-leads/add-leads.component';
+import { AddInventoriesComponent } from './dashboard/inventory/add-inventories/add-inventories.component';
 
 const routes: Routes = [
   { path: 'map', component: MapComponent },
@@ -32,7 +34,10 @@ const routes: Routes = [
   { path: 'leads', component: LeadsComponent },
   { path: 'inactive', component: InactiveComponent },
   { path: 'options', component: OptionsComponent },
-  { path: 'add-users', component: AddUsersComponent }
+  { path: 'add-users', component: AddUsersComponent },
+  { path: 'add-leads', component: AddLeadsComponent },
+  { path: 'add-inventories', component: AddInventoriesComponent }
+
 ];
 
 @NgModule({

@@ -11,8 +11,7 @@
                 <i class="fa fa-search icon"></i>
             </div>
             <div class="col">
-                <input class="form-control" type="search" [(ngModel)]="general_search"
-                    placeholder="Search topics or keywords">
+                <input class="form-control" type="search" [(ngModel)]="general_search" placeholder="Search topics or keywords">
             </div>
         </div>
     </div>
@@ -57,10 +56,9 @@
             <td>
                 <i class="fa fa-search icon"></i>
             </td>
-            <tr
-                *ngFor="let user of data | tableFilter06: data.fullname | tableFilter04: data.contact | tableFilter02: data.location | tableFilter: data.userId | filter: general_search">
+            <tr *ngFor="let user of data | tableFilter06: data.fullname | tableFilter04: data.contact | tableFilter02: data.location | tableFilter: data.userId | filter: general_search">
                 <td>{{ user?.userId }}</td>
-                <td>{{  user.fullname |titlecase}}</td>
+                <td>{{ user.fullname |titlecase}}</td>
                 <td>{{ user.contact }}</td>
                 <td>{{ user.location | titlecase}}</td>
                 <td>{{ user.email }}</td>
@@ -71,4 +69,5 @@
             </tr>
         </tbody>
     </table>
+    <!-- end of table -->
 </div>

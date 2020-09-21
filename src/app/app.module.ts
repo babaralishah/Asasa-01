@@ -21,8 +21,8 @@ import { ForgetpassverifyComponent } from './forgetpassverify/forgetpassverify.c
 import { NewpassComponent } from './newpass/newpass.component';
 import { LoginComponent } from './login/login.component';
 import { SignupotpComponent } from './signupotp/signupotp.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
+// import { NgZorroAntdModule, NZ_I18N } from 'ng-zorro-antd';
+// import { en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -43,6 +43,7 @@ import { AddUsersComponent } from './dashboard/users/add-users/add-users.compone
 import { ToastrModule } from 'ngx-toastr';
 import { AddLeadsComponent } from './dashboard/leads/add-leads/add-leads.component';
 import { AddInventoriesComponent } from './dashboard/inventory/add-inventories/add-inventories.component';
+
 
 // import { HighlightDirective } from './directives/highlight.directive';
 // import { FilterPipe } from './pipes/filter.pipe';
@@ -78,7 +79,7 @@ registerLocaleData(en);
     AddInventoriesComponent
   ],
   imports: [
-   
+    //  NgZorroAntdModule,
     HttpClientModule,
     // MDBBootstrapModule.forRoot(),
     BrowserModule,
@@ -93,7 +94,7 @@ registerLocaleData(en);
     Ng2SearchPipeModule
     // MaterialModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

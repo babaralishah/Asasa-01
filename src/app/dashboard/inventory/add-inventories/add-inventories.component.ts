@@ -13,20 +13,45 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./add-inventories.component.css']
 })
 export class AddInventoriesComponent implements OnInit {
+
+  // Requirements for Map on the template, below; 
   opacity = 1;
   map: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = 33.628463;
   lng = 73.087581;
   submitted = false;
-  user: any;
-  cartService: any;
+  // user: any;
+  // cartService: any;
   addinventoryForm: FormGroup;
+  // checked: boolean = true;
+  
+  // Variables below;
+  optionValue;
+  optionValue1;;
+  fileToUpload: File = null;
+
+  //////////////////////////////////
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private router: Router,
     private toastr: ToastrService) { }
+
+    // File Upload Functions below
+    handleFileInput(files: FileList) {
+      this.fileToUpload = files.item(0);
+  }
+
+  // uploadFileToActivity() {
+  //   this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
+  //     // do something, if upload success
+  //     }, error => {
+  //       console.log(error);
+  //     });
+  // }
+
+  // Form Declaration, and Validation Function
   formDeclare() {
     this.addinventoryForm = this.formBuilder.group({
       prop_type:[''],
@@ -66,16 +91,37 @@ export class AddInventoriesComponent implements OnInit {
       comment: ['', Validators.required],
       prop_title: ['', Validators.required],
       video_link: ['', Validators.required],
-      link_360: ['', Validators.required]
+      link_360: ['', Validators.required],
+      other_plotfeature: ['', Validators.required],
+      total_plotprice: ['', Validators.required],
+      paid_amount: ['', Validators.required],
+      profit: ['', Validators.required],
+      current_price: ['', Validators.required]
     });
   }
+
+  // Get value of prop_type variable in template
+  get Prop_type() {
+    return this.addinventoryForm.get('prop_type')
+  }
+  // Get value of prop_typename variable in template
+  get Prop_typename() {
+    return this.addinventoryForm.get('prop_typename')
+  }
+
   // convenience getter for easy access to form fields
   get f() { return this.addinventoryForm.controls; }
+
+  // ngOnInit
   ngOnInit(): void {
     this.initializemapbox();
     this.formDeclare();
   }
+//   changeValue(value) {
+//     this.checked = !value;
+// }
 
+// Function to initialize Map; used in template
   initializemapbox() {
     this.map = new mapboxgl.Map({
       accessToken:
@@ -85,8 +131,6 @@ export class AddInventoriesComponent implements OnInit {
       center: [73.024955, 33.650753], // starting position [lng, lat]
       zoom: 10, // starting zoom
     });
-    // this.map.addSource
-    // this.mapboxOverlay();
     this.map.addControl(new mapboxgl.FullscreenControl());
     this.map.addControl(new mapboxgl.NavigationControl());
     this.map.addControl(
@@ -99,6 +143,14 @@ export class AddInventoriesComponent implements OnInit {
     );
   }
 
+///////////////////////////////
+// Check whether user pressed 'buy' or 'rent' button 
+  getValue(value:string)
+  {
+    this.optionValue1 = value;
+  }
+
+  // Submit form to backend service
   submitForm() {
     this.submitted = true;    // stop here if form is invalid
     if (this.addinventoryForm.invalid) {

@@ -24,6 +24,18 @@ export class AuthenticationService {
     // this.currentUser = this.currentUserSubject.asObservable();
   }
 
+  //////////// Send data to inventory using inventory form /////////////
+  createInventory(user: any) {
+    console.log('Create user func')
+    return this.httpClient.post(`${this.url}/inventory/save`, user).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  /////////////// Get data from inventory to the inventory table ////////////
+  getInventory() {
+    return this.httpClient.get<any>(`${this.url}/inventory/get`);
+  }
   ///////// Getting user table data //////////////
   getUsers() {
     return this.httpClient.get<any>(`${this.url}/users/find`);

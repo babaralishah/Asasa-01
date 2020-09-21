@@ -203,8 +203,8 @@
                     </div>
                 </div>
 
+                <!-- Radio buttons here; If 'Commercial' Selected then... below -->
                 <div class="row" *ngIf="optionValue =='commercial'">
-                    <!-- Radio buttons here; If 'Commercial' Selected then... below -->
                     <div class="col-md-12 col-sm-12  offset-1"><br>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary">
@@ -951,10 +951,26 @@
 
                     <h3><b>Post Property Images</b></h3>
                 </div>
+                <!-- <div class="row offset-1">
+                    <div class="form-group">
+                        <label class="btn btn-primary" for="file">Get Images</label>
+                        <input class="btn btn-primary" style="display: none" type="file" id="file" (change)="handleFileInput($event.target.files)">
+                        <button class="btn btn-primary">Upload</button>
+                    </div>
+                </div> -->
+
+                <!-- Images upload portion -->
                 <div class="row offset-1">
-                    <input style="display: none" type="file">
-                    <button class="btn btn-primary">Select File</button> &nbsp; &nbsp; &nbsp;
-                    <button class="btn btn-primary">Upload</button></div>
+
+                    <div class="form-group">
+                        <img *ngFor='let url of urls' [src]="url" height="200"> <br/>
+                        <input class="btn btn-primary" style="display: block" type="file" id="file" (change)="onSelectFile($event)" multiple><br><br>
+                        <button class="btn btn-primary">Upload</button>
+                    </div>
+
+                </div>
+
+                <!-- Complete form submission button -->
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <br><br>

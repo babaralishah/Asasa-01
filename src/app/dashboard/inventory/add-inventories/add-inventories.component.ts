@@ -27,6 +27,7 @@ export class AddInventoriesComponent implements OnInit {
   // checked: boolean = true;
   
   // Variables below;
+  urls = [];
   optionValue;
   optionValue1;;
   fileToUpload: File = null;
@@ -153,17 +154,41 @@ export class AddInventoriesComponent implements OnInit {
   // Submit form to backend service
   submitForm() {
     this.submitted = true;    // stop here if form is invalid
-    if (this.addinventoryForm.invalid) {
-      this.toastr.error('Fields Empty', 'Error', {
-        timeOut: 5000
-      });
-      console.log('Erroneous')
-      return;
-    }
-    this.addinventoryForm.reset();
+    // if (this.addinventoryForm.invalid) {
+    //   this.toastr.error('Fields Empty', 'Error', {
+    //     timeOut: 5000
+    //   });
+    //   console.log('Erroneous')
+    //   return;
+    // }
+    // this.addinventoryForm.reset();
     this.toastr.success('Lead Added', 'Success', {
       timeOut: 9000
     });
+    this.authService.createInventory(this.addinventoryForm.value).subscribe((res) => {
+      this.addinventoryForm.reset();
+      this.toastr.success('User Added', 'Success', {
+        timeOut: 9000
+      });
+      console.log('Subscribed data: ', res);
+    });
+  }
+
+  // Form upload function
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+        var filesAmount = event.target.files.length;
+        for (let i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+
+                reader.onload = (event:any) => {
+                  console.log(event.target.result);
+                   this.urls.push(event.target.result); 
+                }
+
+                reader.readAsDataURL(event.target.files[i]);
+        }
+    }
   }
 
 }

@@ -97,8 +97,23 @@
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 offset-1">
+                        <!-- <div class="form-check form-check-inline">
+                            <input type="radio" id="huey" name="drone" value="huey" checked>
+                            <label for="huey">Huey</label>
+                        </div>
+
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" formControlName="prop_type" value="house" checked>
+                            <input type="radio" id="dewey" name="drone" value="dewey">
+                            <label for="dewey">Dewey</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="louie" name="drone" value="louie">
+                            <label for="louie">Louie</label>
+                        </div> -->
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="prop_type" value="house" checked="checked">
                             <label class="form-check-label" for="House">House</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -204,7 +219,7 @@
                 </div>
 
                 <!-- Radio buttons here; If 'Commercial' Selected then... below -->
-                <div class="row" *ngIf="optionValue =='commercial'">
+                <div class="row" *ngIf="Prop_type.value =='commercial'">
                     <div class="col-md-12 col-sm-12  offset-1"><br>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary">
@@ -294,10 +309,10 @@
 
                 <!-- if Plot radio btn been selected-->
                 <!-- Plot Features -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='plot'">
                     <h3><b>Plot Features</b></h3>
                 </div>
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='plot'">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-check form-check-inline">
                             <input type="checkbox" class="form-check-input" id="Possession">
@@ -356,7 +371,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='plot'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -371,10 +386,10 @@
                 </div>
 
                 <!-- Plot Price Detail -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='plot'">
                     <h3><b>Plot Price Detail</b></h3>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='plot'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -398,7 +413,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='plot'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -410,7 +425,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
+                    <div class="col-md-4 col-sm-4 offset-1" *ngIf="Prop_type.value =='plot'">
                         <div class="form-group">
                             <div class="input-group">
                                 <br> Current Price
@@ -422,12 +437,13 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- If house radio btn selected -->
                 <!-- House Features -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house'">
                     <h3><b>House Features</b></h3>
                 </div>
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house'">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-check form-check-inline">
                             <input type="checkbox" class="form-check-input" id="Doubled Gazed Windows">
@@ -467,7 +483,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='house'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -491,7 +507,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='house'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -519,10 +535,10 @@
 
                 <!-- If Commercial radio btn selected -->
                 <!-- Commercial Features -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='commercial'">
                     <h3><b>Commercial Features</b></h3>
                 </div>
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='commercial'">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-check form-check-inline">
                             <input type="checkbox" class="form-check-input" id="Doubled Gazed Windows2">
@@ -562,7 +578,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='commercial'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -586,7 +602,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='commercial'">
                     <div class="col-md-4 col-sm-4 offset-1">
                         <div class="form-group">
                             <div class="input-group">
@@ -613,10 +629,10 @@
                 </div>
 
                 <!-- Business and Communication -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house' || Prop_type.value =='commercial'">
                     <h3><b>Business & Communication</b></h3>
                 </div>
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house' || Prop_type.value =='commercial'">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-check form-check-inline">
                             <input type="checkbox" class="form-check-input" id="Broadband Internet Access">
@@ -632,7 +648,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house' || Prop_type.value =='commercial'">
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <div class="input-group">
@@ -648,163 +664,163 @@
                 </div>
 
                 <!-- Rooms -->
-                <div class="row offset-1">
+                <div class="row offset-1" *ngIf="Prop_type.value =='house'">
                     <h3><b>Rooms</b></h3>
                 </div>
-                <div class="row offset-1">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Prayer Room">
-                            <label class="form-check-label" for="Prayer Room">Prayer Room</label>
+                <div class=" row offset-1" *ngIf="Prop_type.value =='house'">
+                    <div class="col-md-12 col-sm-12 ">
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Prayer Room ">
+                            <label class="form-check-label " for="Prayer Room ">Prayer Room</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Powder Room">
-                            <label class="form-check-label" for="Powder Room">Powder Room</label>
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Powder Room ">
+                            <label class="form-check-label " for="Powder Room ">Powder Room</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Steam Room">
-                            <label class="form-check-label" for="Steam Room">Steam Room</label>
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Steam Room ">
+                            <label class="form-check-label " for="Steam Room ">Steam Room</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Lounge or Sitting Room">
-                            <label class="form-check-label" for="Lounge or Sitting Room">Lounge or Sitting Room</label>
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Lounge or Sitting Room ">
+                            <label class="form-check-label " for="Lounge or Sitting Room ">Lounge or Sitting Room</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Laundary Room">
-                            <label class="form-check-label" for="Laundary Room">Laundary Room</label>
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Laundary Room ">
+                            <label class="form-check-label " for="Laundary Room ">Laundary Room</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="Gym">
-                            <label class="form-check-label" for="Gym">Gym
+                        <div class="form-check form-check-inline ">
+                            <input type="checkbox " class="form-check-input " id="Gym ">
+                            <label class="form-check-label " for="Gym ">Gym
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="Prop_type.value =='house'">
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Bed Rooms
-                                <input type="number" class="form-control" formControlName="bedroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.bedroom.errors }" />
-                                <div *ngIf="submitted && f.bedroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.bedroom.errors.required">Bedroom is required</div>
+                                <input type="number " class="form-control " formControlName="bedroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.bedroom.errors } " />
+                                <div *ngIf="submitted && f.bedroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.bedroom.errors.required ">Bedroom is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Bath Rooms
-                                <input type="number" class="form-control" formControlName="bathroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.bathroom.errors }" />
-                                <div *ngIf="submitted && f.bathroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.bathroom.errors.required">Bathroom is required</div>
+                                <input type="number " class="form-control " formControlName="bathroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.bathroom.errors } " />
+                                <div *ngIf="submitted && f.bathroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.bathroom.errors.required ">Bathroom is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Guest Rooms
-                                <input type="number" class="form-control" formControlName="guestroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.guestroom.errors }" />
-                                <div *ngIf="submitted && f.guestroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.guestroom.errors.required">Guestroom is required</div>
+                                <input type="number " class="form-control " formControlName="guestroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.guestroom.errors } " />
+                                <div *ngIf="submitted && f.guestroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.guestroom.errors.required ">Guestroom is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Tv Lounge
-                                <input type="number" class="form-control" formControlName="tvlounge" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.tvlounge.errors }" />
-                                <div *ngIf="submitted && f.tvlounge.errors" class="invalid-feedback">
-                                    <div *ngIf="f.tvlounge.errors.required">Tv Lounge is required</div>
+                                <input type="number " class="form-control " formControlName="tvlounge " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.tvlounge.errors } " />
+                                <div *ngIf="submitted && f.tvlounge.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.tvlounge.errors.required ">Tv Lounge is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Dinning Rooms
-                                <input type="number" class="form-control" formControlName="diningroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.diningroom.errors }" />
-                                <div *ngIf="submitted && f.diningroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.diningroom.errors.required">Dinning is required</div>
+                                <input type="number " class="form-control " formControlName="diningroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.diningroom.errors } " />
+                                <div *ngIf="submitted && f.diningroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.diningroom.errors.required ">Dinning is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Study Rooms
-                                <input type="number" class="form-control" formControlName="studyroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.studyroom.errors }" />
-                                <div *ngIf="submitted && f.studyroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.studyroom.errors.required">Studyroom is required</div>
+                                <input type="number " class="form-control " formControlName="studyroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.studyroom.errors } " />
+                                <div *ngIf="submitted && f.studyroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.studyroom.errors.required ">Studyroom is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Servant Quarters
-                                <input type="number" class="form-control" formControlName="servantroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.servantroom.errors }" />
-                                <div *ngIf="submitted && f.servantroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.servantroom.errors.required">Servant Quarters is required</div>
+                                <input type="number " class="form-control " formControlName="servantroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.servantroom.errors } " />
+                                <div *ngIf="submitted && f.servantroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.servantroom.errors.required ">Servant Quarters is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Kitchens
-                                <input type="number" class="form-control" formControlName="kitchen" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.kitchen.errors }" />
-                                <div *ngIf="submitted && f.kitchen.errors" class="invalid-feedback">
-                                    <div *ngIf="f.kitchen.errors.required">Kitchen is required</div>
+                                <input type="number " class="form-control " formControlName="kitchen " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.kitchen.errors } " />
+                                <div *ngIf="submitted && f.kitchen.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.kitchen.errors.required ">Kitchen is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Store Rooms
-                                <input type="number" class="form-control" formControlName="storeroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.storeroom.errors }" />
-                                <div *ngIf="submitted && f.storeroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.storeroom.errors.required">Storeroom is required</div>
+                                <input type="number " class="form-control " formControlName="storeroom " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.storeroom.errors } " />
+                                <div *ngIf="submitted && f.storeroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.storeroom.errors.required ">Storeroom is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Floor Location
-                                <input type="number" class="form-control" formControlName="floor_location" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.floor_location.errors }" />
-                                <div *ngIf="submitted && f.floor_location.errors" class="invalid-feedback">
-                                    <div *ngIf="f.floor_location.errors.required">Floor Location is required</div>
+                                <input type="number " class="form-control " formControlName="floor_location " required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.floor_location.errors } " />
+                                <div *ngIf="submitted && f.floor_location.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.floor_location.errors.required ">Floor Location is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Other Rooms
-                                <input type="number" class="form-control" formControlName="otherroom" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.otherroom.errors }" />
-                                <div *ngIf="submitted && f.otherroom.errors" class="invalid-feedback">
-                                    <div *ngIf="f.otherroom.errors.required">Other Rooms is required</div>
+                                <input type="number " class="form-control " formControlName="otherroom" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.otherroom.errors } " />
+                                <div *ngIf="submitted && f.otherroom.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.otherroom.errors.required ">Other Rooms is required</div>
                                 </div>
                             </div>
                         </div>
@@ -819,129 +835,129 @@
                 <div class="row">
 
                     <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Nearby Schools
-                                <input type="text" class="form-control" formControlName="nearby_school" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_school.errors }" />
-                                <div *ngIf="submitted && f.nearby_school.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_school.errors.required">Nearby School is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_school" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_school.errors } " />
+                                <div *ngIf="submitted && f.nearby_school.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_school.errors.required ">Nearby School is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Nearby Hospitals
-                                <input type="text" class="form-control" formControlName="nearby_hospital" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_hospital.errors }" />
-                                <div *ngIf="submitted && f.nearby_hospital.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_hospital.errors.required">Nearby hospital is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_hospital" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_hospital.errors } " />
+                                <div *ngIf="submitted && f.nearby_hospital.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_hospital.errors.required ">Nearby hospital is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Nearby Shopping Malls
-                                <input type="text" class="form-control" formControlName="nearby_shoppingmall" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_shoppingmall.errors }" />
-                                <div *ngIf="submitted && f.nearby_shoppingmall.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_shoppingmall.errors.required">Nearby Shopping Malls is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_shoppingmall" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_shoppingmall.errors } " />
+                                <div *ngIf="submitted && f.nearby_shoppingmall.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_shoppingmall.errors.required ">Nearby Shopping Malls is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Nearby Restaurants
-                                <input type="text" class="form-control" formControlName="nearby_restaurant" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_restaurant.errors }" />
-                                <div *ngIf="submitted && f.nearby_restaurant.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_restaurant.errors.required">Nearby Restaurants is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_restaurant" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_restaurant.errors } " />
+                                <div *ngIf="submitted && f.nearby_restaurant.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_restaurant.errors.required ">Nearby Restaurants is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Distance from Airport(kms)
-                                <input type="number" class="form-control" formControlName="distance_airport" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.distance_airport.errors }" />
-                                <div *ngIf="submitted && f.distance_airport.errors" class="invalid-feedback">
-                                    <div *ngIf="f.distance_airport.errors.required">Distance from Airport is required</div>
+                                <input type="number " class="form-control " formControlName="distance_airport" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.distance_airport.errors } " />
+                                <div *ngIf="submitted && f.distance_airport.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.distance_airport.errors.required ">Distance from Airport is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Nearby Public Transport
-                                <input type="text" class="form-control" formControlName="nearby_transport" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_transport.errors }" />
-                                <div *ngIf="submitted && f.nearby_transport.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_transport.errors.required">Nearby Public Transport is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_transport" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_transport.errors } " />
+                                <div *ngIf="submitted && f.nearby_transport.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_transport.errors.required ">Nearby Public Transport is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Other Nearby Places
-                                <input type="text" class="form-control" formControlName="nearby_other" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.nearby_other.errors }" />
-                                <div *ngIf="submitted && f.nearby_other.errors" class="invalid-feedback">
-                                    <div *ngIf="f.nearby_other.errors.required">Other Nearby Places is required</div>
+                                <input type="text " class="form-control " formControlName="nearby_other" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.nearby_other.errors } " />
+                                <div *ngIf="submitted && f.nearby_other.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.nearby_other.errors.required ">Other Nearby Places is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                <div class="row ">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Comment
-                                <input type="text" class="form-control" formControlName="comment" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }" />
-                                <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
-                                    <div *ngIf="f.comment.errors.required">Comment is required</div>
+                                <input type="text " class="form-control " formControlName="comment" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.comment.errors } " />
+                                <div *ngIf="submitted && f.comment.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.comment.errors.required ">Comment is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Property Title
-                                <input type="text" class="form-control" formControlName="prop_title" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.prop_title.errors }" />
-                                <div *ngIf="submitted && f.prop_title.errors" class="invalid-feedback">
-                                    <div *ngIf="f.prop_title.errors.required">Property Title is required</div>
+                                <input type="text " class="form-control " formControlName="prop_title" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.prop_title.errors } " />
+                                <div *ngIf="submitted && f.prop_title.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.prop_title.errors.required ">Property Title is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> Video Link
-                                <input type="text" class="form-control" formControlName="video_link" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.video_link.errors }" />
-                                <div *ngIf="submitted && f.video_link.errors" class="invalid-feedback">
-                                    <div *ngIf="f.video_link.errors.required">Video Link is required</div>
+                                <input type="text " class="form-control " formControlName="video_link" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.video_link.errors } " />
+                                <div *ngIf="submitted && f.video_link.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.video_link.errors.required ">Video Link is required</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 offset-1">
-                        <div class="form-group">
-                            <div class="input-group">
+                    <div class="col-md-4 col-sm-4 offset-1 ">
+                        <div class="form-group ">
+                            <div class="input-group ">
                                 <br> 360° Link
-                                <input type="text" class="form-control" formControlName="link_360" required autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.link_360.errors }" />
-                                <div *ngIf="submitted && f.link_360.errors" class="invalid-feedback">
-                                    <div *ngIf="f.link_360.errors.required">360° Link is required</div>
+                                <input type="text " class="form-control " formControlName="link_360" required autocomplete="off " [ngClass]="{ 'is-invalid': submitted && f.link_360.errors } " />
+                                <div *ngIf="submitted && f.link_360.errors " class="invalid-feedback ">
+                                    <div *ngIf="f.link_360.errors.required ">360° Link is required</div>
                                 </div>
                             </div>
                         </div>
@@ -951,31 +967,38 @@
 
                     <h3><b>Post Property Images</b></h3>
                 </div>
-                <!-- <div class="row offset-1">
-                    <div class="form-group">
-                        <label class="btn btn-primary" for="file">Get Images</label>
-                        <input class="btn btn-primary" style="display: none" type="file" id="file" (change)="handleFileInput($event.target.files)">
-                        <button class="btn btn-primary">Upload</button>
+                <!-- <div class="row offset-1 ">
+                    <div class="form-group ">
+                        <label class="btn btn-primary " for="file ">Get Images</label>
+                        <input class="btn btn-primary " style="display: none " type="file " id="file " (change)="handleFileInput($event.target.files) ">
+                        <button class="btn btn-primary ">Upload</button>
                     </div>
                 </div> -->
 
                 <!-- Images upload portion -->
                 <div class="row offset-1">
 
-                    <div class="form-group">
+                    <div class="form-group col-md-10 col-sm-10">
+
                         <img *ngFor='let url of urls' [src]="url" height="200"> <br/>
-                        <input class="btn btn-primary" style="display: block" type="file" id="file" (change)="onSelectFile($event)" multiple><br><br>
-                        <button class="btn btn-primary">Upload</button>
+                        <div class="upload-btn-wrapper">
+                            <button class="btn">    
+                        <i class="fa fa-camera" aria-hidden="true">&nbsp;</i>
+                        <span class="upload">Upload</span>
+                        </button>
+                            <input type='file' class="fileField" (change)="onSelectFile($event)" multiple><br><br>
+                            <!-- <button class="btn btn-primary ">Upload</button> -->
+                        </div>
                     </div>
 
                 </div>
 
                 <!-- Complete form submission button -->
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12 col-sm-12 ">
                         <br><br>
-                        <div class="form-group" class="pull-right">
-                            <button (click)="submitForm()" class="btn btn-primary">Post Ad</button>
+                        <div class="form-group " class="pull-right ">
+                            <button (click)="submitForm() " class="btn btn-primary ">Post Ad</button>
                             <br><br><br>
 
                         </div>

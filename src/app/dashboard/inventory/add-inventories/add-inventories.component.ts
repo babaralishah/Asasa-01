@@ -25,7 +25,7 @@ export class AddInventoriesComponent implements OnInit {
   // cartService: any;
   addinventoryForm: FormGroup;
   // checked: boolean = true;
-  
+
   // Variables below;
   urls = [];
   optionValue;
@@ -39,9 +39,9 @@ export class AddInventoriesComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService) { }
 
-    // File Upload Functions below
-    handleFileInput(files: FileList) {
-      this.fileToUpload = files.item(0);
+  // File Upload Functions below
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
   }
 
   // uploadFileToActivity() {
@@ -55,9 +55,9 @@ export class AddInventoriesComponent implements OnInit {
   // Form Declaration, and Validation Function
   formDeclare() {
     this.addinventoryForm = this.formBuilder.group({
-      prop_type:[''],
-      prop_typename:[''],
-      prop_purpose:[''],
+      prop_type: [''],
+      prop_typename: [''],
+      prop_purpose: [''],
       city: ['', Validators.required],
       location: ['', Validators.required],
       sub_location: ['', Validators.required],
@@ -118,11 +118,11 @@ export class AddInventoriesComponent implements OnInit {
     this.initializemapbox();
     this.formDeclare();
   }
-//   changeValue(value) {
-//     this.checked = !value;
-// }
+  //   changeValue(value) {
+  //     this.checked = !value;
+  // }
 
-// Function to initialize Map; used in template
+  // Function to initialize Map; used in template
   initializemapbox() {
     this.map = new mapboxgl.Map({
       accessToken:
@@ -144,10 +144,9 @@ export class AddInventoriesComponent implements OnInit {
     );
   }
 
-///////////////////////////////
-// Check whether user pressed 'buy' or 'rent' button 
-  getValue(value:string)
-  {
+  ///////////////////////////////
+  // Check whether user pressed 'buy' or 'rent' button 
+  getValue(value: string) {
     this.optionValue1 = value;
   }
 
@@ -182,13 +181,16 @@ export class AddInventoriesComponent implements OnInit {
                 var reader = new FileReader();
 
                 reader.onload = (event:any) => {
-                  console.log(event.target.result);
+                  // console.log(event.target.result);
                    this.urls.push(event.target.result); 
                 }
 
                 reader.readAsDataURL(event.target.files[i]);
         }
     }
+  }
+  removeMultipleSelectedFile(index) {
+    this.urls.splice(index, 1);
   }
 
 }

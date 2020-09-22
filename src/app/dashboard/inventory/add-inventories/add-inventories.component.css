@@ -1,3 +1,47 @@
+img {
+    height: 140px;
+    width: 190px;
+    object-fit: cover;
+}
+
+.fileField {
+    width: 103px;
+    margin-top: -37px;
+    margin-left: 10px;
+    opacity: .01;
+}
+
+.upload-btn-wrapper[_ngcontent-serverApp-c16] {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn[_ngcontent-serverApp-c16] {
+    color: #ffffff;
+    background-color: #38baa2;
+    padding: 7px 11px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-top: 7px;
+}
+
+.upload[_ngcontent-serverApp-c16] {
+    font-family: sans-serif;
+    margin-left: 4px;
+}
+
+.upload-btn-wrapper[_ngcontent-serverApp-c16] input[type="file"][_ngcontent-serverApp-c16] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
 .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
     color: #fff;
     background: #38bba2;

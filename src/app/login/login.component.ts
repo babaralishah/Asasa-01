@@ -27,6 +27,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initialize();
+  }
+  initialize() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
     this.route.params.subscribe(param => {
       this.email = param.email;
       // console.log(this.email);
@@ -37,10 +45,6 @@ export class LoginComponent implements OnInit {
     } else if (window.innerWidth > 600) {
       this.mobileView = false;
     }
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
   }
   // get email() {
   //   return this.loginForm.get('email')

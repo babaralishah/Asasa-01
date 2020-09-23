@@ -50,7 +50,7 @@ export class AddLeadsComponent implements OnInit {
       this.toastr.error('Fields Empty', 'Error', {
         timeOut: 5000
       });
-      console.log('Erroneous')
+      // console.log('Erroneous')
       return;
     }
     this.addleadForm.reset();

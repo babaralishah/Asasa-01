@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isShown:boolean=false;
+  isShown: boolean = false;
   title = 'My Asasa Real Estate';
   loginForm: FormGroup; // Instance of Form group that will get form data from user end (i.e; login.html)
   // registerForm: FormGroup;
@@ -24,10 +24,18 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+
+    this.initialize();
+    // this.router.navigate(['profile']);
+
+  }
+
+  initialize() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+
   }
   get email() {
     return this.loginForm.get('email')
@@ -42,7 +50,7 @@ export class AppComponent {
 
       console.log(data);
       const status = data.status;
-      const msg:string = data.msg;
+      const msg: string = data.msg;
       console.log("Status: " + status);
       console.log("Message: " + msg);
       if (status) {

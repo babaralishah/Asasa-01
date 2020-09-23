@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   email: string;
+  url: string | ArrayBuffer;
   constructor(public router: Router, private route: ActivatedRoute) { }
   // username:string;
   username = this.router.url;
@@ -16,6 +17,17 @@ export class ProfileComponent implements OnInit {
       this.email = param.email;
       console.log(this.email);
     });
+  }
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = event.target.result;
+      }
+    }
   }
 
 }

@@ -2,7 +2,7 @@
 <!-- <a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
   <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
 </a> -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+<!-- <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid px-0">
         <div class="row w-100">
             <div class="col-5">
@@ -36,7 +36,9 @@
                 <div class="collapse justify-content-end navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" routerLink="/login-component">Login </a>
+
+                            <a class="nav-link" *ngIf="isLogin()" (click)="logout()">Logout</a>
+                            <a class="nav-link" *ngIf="!isLogin()" routerLink="/">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/map">Maps</a>
@@ -61,7 +63,7 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

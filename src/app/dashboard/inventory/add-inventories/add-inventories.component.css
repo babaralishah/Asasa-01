@@ -1,3 +1,7 @@
+.heading1 {
+    margin-left: 0px;
+}
+
 img {
     height: 140px;
     width: 190px;
@@ -302,7 +306,7 @@ textarea.question:invalid~input[type="submit"] {
 .register-left img {
     margin-top: 15%;
     margin-bottom: 5%;
-    width: 50%;
+    width: 70%;
     -webkit-animation: mover 3s infinite alternate;
     animation: mover 0.5s infinite alternate;
 }

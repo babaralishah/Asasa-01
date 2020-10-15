@@ -13,7 +13,8 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
   // API_URL: string = 'http://localhost:4000';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  private readonly url = 'https://shaisecommercestore.herokuapp.com/api'; // environment.url;
+  // private readonly url = 'https://shaisecommercestore.herokuapp.com/api'; // environment.url;
+  private readonly url = 'https://my-asasa.herokuapp.com';
 
 
 
@@ -25,29 +26,44 @@ export class AuthenticationService {
   }
 
   //////////// Send data to inventory using inventory form /////////////
+  // tslint:disable-next-line: typedef
   createInventory(user: any) {
-    console.log('Create user func')
-    return this.httpClient.post(`${this.url}/inventory/save`, user).pipe(
+    console.log('Create user func');
+    return this.httpClient.post(`${this.url}/inventory/add`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
 
   /////////////// Get data from inventory to the inventory table ////////////
+  // tslint:disable-next-line: typedef
   getInventory() {
-    return this.httpClient.get<any>(`${this.url}/inventory/get`);
+    return this.httpClient.get<any>(`${this.url}/inventory`);
   }
   ///////// Getting user table data //////////////
+  // tslint:disable-next-line: typedef
   getUsers() {
-    return this.httpClient.get<any>(`${this.url}/users/find`);
+    return this.httpClient.get<any>(`${this.url}/users/login`);
   }
   ////////////// Send new row table data /////////////
+  // tslint:disable-next-line: typedef
   createUsers(user: any) {
-    console.log('Create user func')
+    console.log('Create user func');
     return this.httpClient.post(`${this.url}/users/save`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
+  // create service to get and set the token to local storage
 
+  // tslint:disable-next-line: typedef
+  setToken(token) {
+    localStorage.setItem('token', token);
+  }
+  // tslint:disable-next-line: typedef
+  getToken() {
+    const token = localStorage.getItem('token');
+    // console.log('token:\t', token);
+    return token;
+  }
   // public getAll(): Observable<any> {
   //   return this.httpClient.get<User[]>(`${this.url}/user`);
   // }
@@ -55,9 +71,9 @@ export class AuthenticationService {
   ///////// Function to Register the new user /////////////
   register(user: User): Observable<any> {
 
-    return this.httpClient.post(`${this.url}/users/signup`, user).pipe(
+    return this.httpClient.post(`${this.url}/users/register`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
   /* API Call to verify otp code */
   ////// Verifying the email address while signing the user up ///////////////////
@@ -65,21 +81,21 @@ export class AuthenticationService {
 
     return this.httpClient.post(`${this.url}/users/verifyemail`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
   ///////// Verifying the user using otp code to his gmail to change his/her password /////////////
   verifyOTPCode(user: any): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/verifyotpcode`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
   ///////////// Adding new password after forgetting the old password ////////
   newpassword(user: any): Observable<any> {
 
     return this.httpClient.post(`${this.url}/users/newpassword`, user).pipe(
       catchError(this.handleError)
-    )
+    );
   }
 
   /////////// Function to Login the already existed user /////////////
@@ -102,15 +118,17 @@ export class AuthenticationService {
   }
 
   /////////////// Get Users Token //////////////////////////
+  // tslint:disable-next-line: typedef
   getAccessToken() {
     return localStorage.getItem('access_token');
   }
 
   get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
+    const authToken = localStorage.getItem('access_token');
     return (authToken !== null) ? true : false;
   }
   ////////// Logout Function ////////////////
+  // tslint:disable-next-line: typedef
   logout() {
     if (localStorage.removeItem('access_token') == null) {
       this.router.navigate(['users/login']);
@@ -122,14 +140,15 @@ export class AuthenticationService {
   getUserProfile(id): Observable<any> {
     return this.httpClient.get(`${this.url}/user/profile/${id}`, { headers: this.headers }).pipe(
       map((res: Response) => {
-        return res || {}
+        return res || {};
       }),
       catchError(this.handleError)
-    )
+    );
   }
   ///////////////////////////////////////////
 
   ///////// Error Handling /////////////////
+  // tslint:disable-next-line: typedef
   handleError(error: HttpErrorResponse) {
     let msg = '';
     if (error.error instanceof ErrorEvent) {

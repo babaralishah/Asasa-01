@@ -43,6 +43,7 @@ import { AddUsersComponent } from './dashboard/users/add-users/add-users.compone
 import { ToastrModule } from 'ngx-toastr';
 import { AddLeadsComponent } from './dashboard/leads/add-leads/add-leads.component';
 import { AddInventoriesComponent } from './dashboard/inventory/add-inventories/add-inventories.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 // import { HighlightDirective } from './directives/highlight.directive';
@@ -76,7 +77,8 @@ registerLocaleData(en);
     OptionsComponent,
     AddUsersComponent,
     AddLeadsComponent,
-    AddInventoriesComponent
+    AddInventoriesComponent,
+    NavbarComponent
   ],
   imports: [
     //  NgZorroAntdModule,

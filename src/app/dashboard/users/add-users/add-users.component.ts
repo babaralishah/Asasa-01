@@ -1,10 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl, FormArray, NgForm } from '@angular/forms'
-import { from } from 'rxjs';
+import { FormGroup, FormBuilder, Validators, FormControl, FormArray, NgForm } from '@angular/forms';
+// import { from } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { ToastrService } from "ngx-toastr";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-users',
@@ -24,6 +24,7 @@ export class AddUsersComponent implements OnInit {
     private toastr: ToastrService) {
   }
 
+  // tslint:disable-next-line: typedef
   formDeclare() {
     this.adduserForm = this.formBuilder.group({
       location: ['', Validators.required],
@@ -36,15 +37,18 @@ export class AddUsersComponent implements OnInit {
     });
   }
   // convenience getter for easy access to form fields
+  // tslint:disable-next-line: typedef
   get f() { return this.adduserForm.controls; }
   ngOnInit(): void {
     this.formDeclare();
   }
+  // tslint:disable-next-line: typedef
   createUser() {
     this.authService.createUsers(this.adduserForm).subscribe((res) => {
       console.log('Subscribed data: ', res);
     });
   }
+  // tslint:disable-next-line: typedef
   submitForm() {
     this.submitted = true;    // stop here if form is invalid
     if (this.adduserForm.invalid) {

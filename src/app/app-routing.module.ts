@@ -17,26 +17,77 @@ import { OptionsComponent } from './dashboard/options/options.component';
 import { AddUsersComponent } from './dashboard/users/add-users/add-users.component';
 import { AddLeadsComponent } from './dashboard/leads/add-leads/add-leads.component';
 import { AddInventoriesComponent } from './dashboard/inventory/add-inventories/add-inventories.component';
+import { RedirectLoginGuard } from './services/redirectlogin.guard';
+import { IsLoginGuard } from './services/islogin.guard';
 
 const routes: Routes = [
-  { path: 'map', component: MapComponent },
-  { path: 'login-component', component: LoginComponent },
-  { path: 'signup-component', component: SignupComponent },
+  {
+    path: 'map',
+    canActivate: [IsLoginGuard], component: MapComponent
+  },
+  {
+    path: '',
+    // canActivate: [RedirectLoginGuard],
+    component: LoginComponent
+  },
+  {
+    path: 'signup-component',
+    canActivate: [RedirectLoginGuard], component: SignupComponent
+  },
   { path: 'forgetpass-component', component: ForgetpassComponent },
   { path: 'forgetpassverify-component/:email', component: ForgetpassverifyComponent },
   { path: 'newpass-component/:email', component: NewpassComponent },
   { path: 'signupotp-component/:email', component: SignupotpComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'profile/:email', component: ProfileComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'inventory', component: InventoryComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'leads', component: LeadsComponent },
-  { path: 'inactive', component: InactiveComponent },
-  { path: 'options', component: OptionsComponent },
-  { path: 'add-users', component: AddUsersComponent },
-  { path: 'add-leads', component: AddLeadsComponent },
-  { path: 'add-inventories', component: AddInventoriesComponent }
+  {
+    path: 'dashboard',
+    // canActivate: [IsLoginGuard],
+    component: DashboardComponent
+  },
+  {
+    path: 'navbar',
+    canActivate: [IsLoginGuard], component: DashboardComponent
+  },
+  {
+    path: 'profile/:email',
+    canActivate: [IsLoginGuard], component: ProfileComponent
+  },
+  {
+    path: 'profile',
+    // canActivate: [IsLoginGuard],
+     component: ProfileComponent
+  },
+  {
+    path: 'inventory',
+    canActivate: [IsLoginGuard], component: InventoryComponent
+  },
+  {
+    path: 'users',
+    canActivate: [IsLoginGuard], component: UsersComponent
+  },
+  {
+    path: 'leads',
+    canActivate: [IsLoginGuard], component: LeadsComponent
+  },
+  {
+    path: 'inactive',
+    canActivate: [IsLoginGuard], component: InactiveComponent
+  },
+  {
+    path: 'options',
+    canActivate: [IsLoginGuard], component: OptionsComponent
+  },
+  {
+    path: 'add-users',
+    canActivate: [IsLoginGuard], component: AddUsersComponent
+  },
+  {
+    path: 'add-leads',
+    canActivate: [IsLoginGuard], component: AddLeadsComponent
+  },
+  {
+    path: 'add-inventories',
+    canActivate: [IsLoginGuard], component: AddInventoriesComponent
+  }
 
 ];
 

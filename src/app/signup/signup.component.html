@@ -4,77 +4,72 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
 <div class="container">
-	<div class="row">
-		<div class="col-sm-5 col-md-5 left">
-			<div>
+    <div class="row">
+        <div class="col-sm-5 col-md-5 left">
+            <div>
 
-				<img class="left-img" src="assets/icons/asasa.gif" />
-			</div>
-		</div>
+                <img class="left-img" src="assets/icons/asasa.gif" />
+            </div>
+        </div>
 
-		<div class="col-1 v2" *ngIf="mobileView ==false">
-			<div class="vl"></div>
-			Register
-			<div class="vl"></div>
-		</div>
+        <div class="col-1 v2" *ngIf="mobileView ==false">
+            <div class="vl"></div>
+            Register
+            <div class="vl"></div>
+        </div>
 
-		<div class="col-sm-6 col-md-6 right">
-			<h2 class="text-center">Welcome to my asasa</h2>
-			<form class="form-register" [formGroup]="registerForm" (ngSubmit)="registerUser()">
-				<div class="form-group">
-					<div class="input-group">
-						<i class="fa fa-user fa" aria-hidden="true"></i>
-						<input type="text" class="form-control inputs" formControlName="username" id="username"
-							placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-						<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-							<div *ngIf="f.username.errors.required">Name is required</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-						<i class="fa fa-envelope" aria-hidden="true"></i>
-						<input type="text" class="form-control emailInput" formControlName="email" id="email"
-							placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-						<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-							<div *ngIf="f.email.errors.required">Email is required</div>
-							<div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-						<i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-						<input type="password" #password class="form-control inputs" formControlName="password"
-							name="password" id="password" placeholder="Password"
-							[ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-						<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-							<div *ngIf="f.password.errors.required">Password is required</div>
-							<div *ngIf="f.password.errors.minlength">Password must be at least 6
-								characters</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-						<i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-						<input type="password" #confirm class="form-control inputs" name="confirm" id="confirm"
-							placeholder="Confirm Password" />
-						<!-- <div *ngIf="password.value!=confirm.value"> Password & Confirm Password does not match.</div> -->
-					</div>
-					<div id='message'></div>
-				</div>
-				<div class="form-group">
-					<button type="submit" class='btn' class="btn btn-primary rounded-pill">Register</button>
-				</div>
-				<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-				<div class="lastdiv">Already Registered!
-					<a routerLink="/login-component"> <b>Login!</b></a>
-				</div>
-			</form>
+        <div class="col-sm-6 col-md-6 right">
+            <h2 class="text-center">Welcome to my asasa</h2>
+            <form class="form-register" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-user fa" aria-hidden="true"></i>
+                        <input type="text" class="form-control inputs" formControlName="fullname" id="fullname" placeholder="Full name" [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }" />
+                        <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+                            <div *ngIf="f.fullname.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="text" class="form-control emailInput" formControlName="email" id="email" placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                        <input type="password" #password class="form-control inputs" formControlName="password" name="password" id="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                        <input type="password" #confirm class="form-control inputs" name="confirm" id="confirm" placeholder="Confirm Password" />
+                        <!-- <div *ngIf="password.value!=confirm.value"> Password & Confirm Password does not match.</div> -->
+                    </div>
+                    <div id='message'></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class='btn' class="btn btn-primary rounded-pill">Register</button>
+                </div>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <div class="lastdiv">Already Registered!
+                    <a routerLink="/"> <b>Login!</b></a>
+                </div>
+            </form>
 
-		</div>
-	</div>
+        </div>
+    </div>
 
 
 </div>

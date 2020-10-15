@@ -1,6 +1,6 @@
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { Component } from '@angular/core';
-import { AuthenticationService } from "./services/authentication.service";
+import { AuthenticationService } from './services/authentication.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isShown: boolean = false;
+  isShown = false;
   title = 'My Asasa Real Estate';
   loginForm: FormGroup; // Instance of Form group that will get form data from user end (i.e; login.html)
   // registerForm: FormGroup;
@@ -23,13 +23,33 @@ export class AppComponent {
     public router: Router) {
   }
 
+  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(): void {
 
     this.initialize();
     // this.router.navigate(['profile']);
 
   }
+  // tslint:disable-next-line: typedef
+  isLogin() {
 
+    const token = this.authService.getToken();
+    // console.log(token);
+    return token;
+    // if (token) {
+    //   return true;
+    // }
+    // else {
+    //   return false;
+    // }
+  }
+  // tslint:disable-next-line: typedef
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/login-component');
+  }
+
+  // tslint:disable-next-line: typedef
   initialize() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -37,9 +57,11 @@ export class AppComponent {
     });
 
   }
+  // tslint:disable-next-line: typedef
   get email() {
-    return this.loginForm.get('email')
+    return this.loginForm.get('email');
   }
+  // tslint:disable-next-line: typedef
   loginUser() {
     this.submitted = true;
     if (this.loginForm.invalid) {
@@ -51,8 +73,8 @@ export class AppComponent {
       console.log(data);
       const status = data.status;
       const msg: string = data.msg;
-      console.log("Status: " + status);
-      console.log("Message: " + msg);
+      console.log('Status: ' + status);
+      console.log('Message: ' + msg);
       if (status) {
 
       } else {
@@ -61,5 +83,6 @@ export class AppComponent {
     });
   }
   // getting input labels values from user end (login.html)
+  // tslint:disable-next-line: typedef
   get f() { return this.loginForm.controls; }
 }

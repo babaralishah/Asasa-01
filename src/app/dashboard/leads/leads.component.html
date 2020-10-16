@@ -14,8 +14,7 @@
             </div>
             <!--end of col-->
             <div class="col">
-                <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search"
-                    placeholder="Search topic or keyword">
+                <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search" placeholder="Search topic or keyword">
             </div>
 
             <!-- <button class="btn btn-primary rounded-pill" type="submit">Search</button> -->
@@ -26,7 +25,7 @@
     </div>
     <br><br><br>
     <!-- Inventory management table is below -->
-    <table class="table table-hover" class="table table-hover table-dark">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -48,7 +47,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <!-- <tr>
                 <td>
                     <input class="form-control" type="text" [(ngModel)]="search_id" placeholder="">
                 </td>
@@ -97,9 +96,8 @@
                 <td>
                     <i class="fa fa-search icon"></i>
                 </td>
-            </tr>
-            <tr
-                *ngFor="let user of users | tableFilter06: search_client | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
+            </tr> -->
+            <tr *ngFor="let user of users | tableFilter06: search_client | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
                 <td>{{ user.Id }}</td>
                 <td>{{ user.Client }}</td>
                 <td>{{ user.Type }}</td>

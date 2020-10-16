@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    // canActivate: [RedirectLoginGuard],
+    canActivate: [RedirectLoginGuard],
     component: LoginComponent
   },
   {
@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'signupotp-component/:email', component: SignupotpComponent },
   {
     path: 'dashboard',
-    // canActivate: [IsLoginGuard],
+    canActivate: [IsLoginGuard],
     component: DashboardComponent
   },
   {
@@ -53,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    // canActivate: [IsLoginGuard],
+    canActivate: [IsLoginGuard],
      component: ProfileComponent
   },
   {

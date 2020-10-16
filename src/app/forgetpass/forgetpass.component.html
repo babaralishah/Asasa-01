@@ -25,10 +25,7 @@
                 <div class="form-group" class='input-container'>
                     <div class="input-group">
                         <i class="fa fa-user icon"></i>
-                        <input class="form-control" class="input-field"
-                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="inputEmail" type="text"
-                            name="email" formControlName="email" placeholder="Email address" required="" autofocus=""
-                            class="form-control rounded-pill border-0 shadow-sm px-4">
+                        <input class="form-control" class="input-field" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="inputEmail" type="text" name="email" formControlName="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                             <div *ngIf="f.email.errors.required">Email is required</div>
                             <div *ngIf="f.email.errors.email">Email must be a valid email address
@@ -41,7 +38,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-info rounded-pill">Get Code</button>
                 </div>
-                <button class="btn btn-info rounded-pill" routerLink="/login-component">Back</button>
+                <button class="btn btn-info rounded-pill" routerLink="/">Back</button>
                 <!-- </div> -->
 
             </form>

@@ -1,7 +1,7 @@
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -46,7 +46,7 @@ export class AppComponent {
   // tslint:disable-next-line: typedef
   logout() {
     localStorage.removeItem('token');
-    this.router.navigateByUrl('/login-component');
+    this.router.navigateByUrl('/');
   }
 
   // tslint:disable-next-line: typedef

@@ -1,8 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl, FormArray, NgForm } from '@angular/forms'
-import { from } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -12,21 +11,25 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class UsersComponent implements OnInit {
 
+  // tslint:disable-next-line: variable-name
   general_search: string;
   data: any;
 
   constructor(
-    private formBuilder: FormBuilder,
+    // private formBuilder: FormBuilder,
     private authService: AuthenticationService,
-    private router: Router) { }
+    // private router: Router
+    ) { }
   user: any;
   ngOnInit(): void {
     this.getUserList();
   }
+  // tslint:disable-next-line: typedef
   getUserList() {
     this.authService.getUsers().subscribe(
       (data) => {
         this.data = data.users;
+        console.log(this.data);
       },
       (err) => {
         console.error(err);

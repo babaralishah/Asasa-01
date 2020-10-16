@@ -25,13 +25,16 @@ export class NewpassComponent implements OnInit {
     });
     this.initialize();
   }
+  // tslint:disable-next-line: typedef
   initialize() {
     this.newpassForm = this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+  // tslint:disable-next-line: typedef
   get f() { return this.newpassForm.controls; }
 
+  // tslint:disable-next-line: typedef
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
@@ -44,13 +47,13 @@ export class NewpassComponent implements OnInit {
     };
 
     this.authServ.newpassword(user).subscribe(data => {
-      console.log("server response: ");
+      console.log('server response: ');
       console.log(data);
       const status = data.success;
       const msg = data.status;
       if (status) {
         alert(msg);
-        this.router.navigate(['login-component']);
+        this.router.navigate(['/']);
       } else {
         alert(msg);
       }

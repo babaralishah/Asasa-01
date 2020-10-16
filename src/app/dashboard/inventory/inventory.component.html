@@ -1,53 +1,59 @@
-<div class="inventory"><br>
-    <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;Inventory Management</b></h1>
-    <br>
-    <div>
-        <button class="btn btn-primary rounded-pill" routerLink="/add-inventories">Add New</button>
-        <button class="btn btn-primary rounded-pill">Filters</button>
-        <div class="dropdown">
-            <button class="dropbtn" class="btn btn-primary rounded-pill">Select Agent</button>
-            <div class="dropdown-content">
-                <a href="#">Agent 1</a>
-                <a href="#">Agent 2</a>
-                <a href="#">Agent 3</a>
-            </div>
+<div class="abc">
+    <div class="row">
+        <div class="col-md-12">
+            <app-dashboard></app-dashboard>
         </div>
-    </div>
+        <div class="row">
+            <div class=" ">
+                <div class="inventory"><br>
+                    <h1><b>&nbsp;&nbsp;&nbsp;&nbsp;Inventory Management</b></h1>
+                    <br>
+                    <div>
+                        <button class="btn btn-primary rounded-pill" routerLink="/add-inventories">Add New</button>
+                        <button class="btn btn-primary rounded-pill">Filters</button>
+                        <div class="dropdown">
+                            <button class="dropbtn" class="btn btn-primary rounded-pill">Select Agent</button>
+                            <div class="dropdown-content">
+                                <a href="#">Agent 1</a>
+                                <a href="#">Agent 2</a>
+                                <a href="#">Agent 3</a>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="pull-right">
-        <div class="card-body row">
-            <div class="col-auto">
-                <i class="fa fa-search icon"></i>
-            </div>
-            <!--end of col-->
-            <div class="col">
-                <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search"
-                    placeholder="Search topic or keyword">
-            </div>
+                    <div class="pull-right">
+                        <div class="card-body row">
+                            <div class="col-auto">
+                                <i class="fa fa-search icon"></i>
+                            </div>
+                            <!--end of col-->
+                            <div class="col">
+                                <input class="form-control" id="myInput" type="text" [(ngModel)]="general_search" placeholder="Search topic or keyword">
+                            </div>
 
-            <button class="btn btn-primary rounded-pill">Print</button>
-            <button class="btn btn-primary rounded-pill">Excel</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-    </div>
-    <br><br><br>
-    <!-- Inventory management table is below -->
+                            <button onclick="window.print()" class="btn btn-primary rounded-pill">Print</button>
+                            <button class="btn btn-primary rounded-pill">Excel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <!-- Inventory management table is below -->
 
-    <table class="table table-hover" class="table table-hover table-dark">
-        <thead>
-            <th scope="col">ID</th>
-            <th scope="col">Location</th>
-            <th scope="col">Area</th>
-            <th scope="col">Type</th>
-            <th scope="col">Demand</th>
-            <th scope="col">Purpose</th>
-            <th scope="col">Beds</th>
-            <th scope="col">Client Details</th>
-            <th scope="col">Agent Assigned</th>
-            <th scope="col">Operations</th>
-        </thead>
+                    <table class="table table-hover">
+                        <thead>
+                            <th scope="col">ID</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Area</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Demand</th>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">Beds</th>
+                            <th scope="col">Client Details</th>
+                            <th scope="col">Agent Assigned</th>
+                            <th scope="col">Operations</th>
+                        </thead>
 
-        <tbody>
-            <td>
+                        <tbody>
+                            <!-- <td>
                 <input class="form-control" type="text" [(ngModel)]="search_id" placeholder="Search ID">
             </td>
             <td>
@@ -76,22 +82,25 @@
             </td>
             <td>
                 <i class="fa fa-search icon"></i>
-            </td>
-            <tr
-                *ngFor="let user of user | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
-                <td>{{ user.Id }}</td>
-                <td>{{ user.Location }}</td>
-                <td>{{ user.Area }}</td>
-                <td>{{ user.Type }}</td>
-                <td>{{ user.Demand }}</td>
-                <td>{{ user.Purpose }}</td>
-                <td>{{ user.Beds }}</td>
-                <td>{{ user.Client}}</td>
-                <td>{{ user.Agent }}</td>
-                <td><i class="fa fa-edit icon"></i><a role="button">Edit</a>
-                    <a><i class="fa fa-trash icon"></i></a></td>
-            </tr>
-        </tbody>
+            </td> -->
+                            <tr *ngFor="let user of user | tableFilter05: search_demand | tableFilter04: search_type | tableFilter03: search_area | tableFilter02: search_location | tableFilter: search_id | filter: general_search">
+                                <td>{{ user.Id }}</td>
+                                <td>{{ user.Location }}</td>
+                                <td>{{ user.Area }}</td>
+                                <td>{{ user.Type }}</td>
+                                <td>{{ user.Demand }}</td>
+                                <td>{{ user.Purpose }}</td>
+                                <td>{{ user.Beds }}</td>
+                                <td>{{ user.Client}}</td>
+                                <td>{{ user.Agent }}</td>
+                                <td><i class="fa fa-edit icon"></i><a role="button">Edit</a>
+                                    <a><i class="fa fa-trash icon"></i></a></td>
+                            </tr>
+                        </tbody>
 
-    </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

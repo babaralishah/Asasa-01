@@ -1,3 +1,35 @@
+.register .nav-tabs {
+    margin-top: 17%;
+    margin-right: -30px;
+    border: none;
+    background: #38bba3;
+    border-radius: 1.5rem;
+    width: 40%;
+    float: right;
+    padding: 3px;
+}
+
+.register .nav-tabs .nav-link {
+    padding: 12%;
+    /* height: 35px; */
+    /* font-weight: 600; */
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.register .nav-tabs .nav-link:hover {
+    border: none;
+}
+
+.register .nav-tabs .nav-link.active {
+    width: 100px;
+    color: #0f101187;
+    border: 2px solid #38bba3;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
 .heading1 {
     margin-left: 0px;
 }
@@ -336,8 +368,8 @@ textarea.question:invalid~input[type="submit"] {
 }
 
 .register .register-form {
-    padding: 10%;
-    margin-top: 10%;
+    padding: 12%;
+    margin-top: -20%;
 }
 
 .register-heading {

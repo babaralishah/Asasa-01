@@ -42,7 +42,8 @@ export class AuthenticationService {
   ///////// Getting user table data //////////////
   // tslint:disable-next-line: typedef
   getUsers() {
-    return this.httpClient.get<any>(`${this.url}/users/login`);
+    console.log(`${this.url}/users`);
+    return this.httpClient.get<any>(`${this.url}/users`);
   }
   ////////////// Send new row table data /////////////
   // tslint:disable-next-line: typedef
